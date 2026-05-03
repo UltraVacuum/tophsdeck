@@ -1,94 +1,316 @@
 {
-  "id": "3e6b66d1-b413-430c-9c0a-c2859506e4f2",
+  "id": "5d333418-00e6-4239-abe9-5d87dc33847f",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
-    "color_info": {
-      "name": "color_info",
+    "cards": {
+      "name": "cards",
       "schema": "",
       "columns": {
         "id": {
           "name": "id",
-          "type": "serial",
+          "type": "varchar",
           "primaryKey": true,
           "notNull": true
-        },
-        "hex": {
-          "name": "hex",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
         },
         "name": {
           "name": "name",
-          "type": "text",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
-        "created_at": {
-          "name": "created_at",
-          "type": "timestamp with time zone",
+        "dbfId": {
+          "name": "dbfId",
+          "type": "varchar",
           "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
+          "notNull": false
         },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "timestamp with time zone",
+        "cardClass": {
+          "name": "cardClass",
+          "type": "varchar",
           "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "color_sets": {
-      "name": "color_sets",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
+          "notNull": false
         },
-        "rgba": {
-          "name": "rgba",
+        "cardMeta": {
+          "name": "cardMeta",
           "type": "jsonb",
           "primaryKey": false,
           "notNull": false
         },
-        "hex": {
-          "name": "hex",
+        "attack": {
+          "name": "attack",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "health": {
+          "name": "health",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "armor": {
+          "name": "armor",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "heroPowerDbfId": {
+          "name": "heroPowerDbfId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "set": {
+          "name": "set",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "type": {
+          "name": "type",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "artist": {
+          "name": "artist",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "rarity": {
+          "name": "rarity",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "cost": {
+          "name": "cost",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "faction": {
+          "name": "faction",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "collectible": {
+          "name": "collectible",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "flavor": {
+          "name": "flavor",
           "type": "text",
           "primaryKey": false,
           "notNull": false
         },
-        "hsv": {
-          "name": "hsv",
+        "spellSchool": {
+          "name": "spellSchool",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "text": {
+          "name": "text",
           "type": "text",
           "primaryKey": false,
           "notNull": false
         },
-        "hsl": {
-          "name": "hsl",
+        "mechanics": {
+          "name": "mechanics",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "race": {
+          "name": "race",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "races": {
+          "name": "races",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "referencedTags": {
+          "name": "referencedTags",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "elite": {
+          "name": "elite",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "targetingArrowText": {
+          "name": "targetingArrowText",
           "type": "text",
           "primaryKey": false,
           "notNull": false
         },
-        "a": {
-          "name": "a",
-          "type": "real",
+        "durability": {
+          "name": "durability",
+          "type": "integer",
           "primaryKey": false,
           "notNull": false
         },
-        "info": {
-          "name": "info",
-          "type": "bigint",
+        "overload": {
+          "name": "overload",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "spellDamage": {
+          "name": "spellDamage",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsPremiumDbfId": {
+          "name": "battlegroundsPremiumDbfId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "techLevel": {
+          "name": "techLevel",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hasDiamondSkin": {
+          "name": "hasDiamondSkin",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "howToEarnGolden": {
+          "name": "howToEarnGolden",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "howToEarn": {
+          "name": "howToEarn",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "collectionText": {
+          "name": "collectionText",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hideCost": {
+          "name": "hideCost",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "hideStats": {
+          "name": "hideStats",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mercenariesRole": {
+          "name": "mercenariesRole",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "isBattlegroundsPoolMinion": {
+          "name": "isBattlegroundsPoolMinion",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsNormalDbfId": {
+          "name": "battlegroundsNormalDbfId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsBuddyDbfId": {
+          "name": "battlegroundsBuddyDbfId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsHero": {
+          "name": "battlegroundsHero",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "isBattlegroundsBuddy": {
+          "name": "isBattlegroundsBuddy",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsSkinParentId": {
+          "name": "battlegroundsSkinParentId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "battlegroundsDarkmoonPrizeTurn": {
+          "name": "battlegroundsDarkmoonPrizeTurn",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "countAsCopyOfDbfId": {
+          "name": "countAsCopyOfDbfId",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "classes": {
+          "name": "classes",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "puzzleType": {
+          "name": "puzzleType",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "multiClassGroup": {
+          "name": "multiClassGroup",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "isMiniSet": {
+          "name": "isMiniSet",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "mercenariesAbilityCooldown": {
+          "name": "mercenariesAbilityCooldown",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "questReward": {
+          "name": "questReward",
+          "type": "varchar",
           "primaryKey": false,
           "notNull": false
         },
@@ -112,8 +334,8 @@
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },
-    "colors": {
-      "name": "colors",
+    "decks": {
+      "name": "decks",
       "schema": "",
       "columns": {
         "id": {
@@ -122,98 +344,8 @@
           "primaryKey": true,
           "notNull": true
         },
-        "hex": {
-          "name": "hex",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "rgb": {
-          "name": "rgb",
-          "type": "jsonb",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "hsv": {
-          "name": "hsv",
-          "type": "jsonb",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "hsl": {
-          "name": "hsl",
-          "type": "jsonb",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "alpha": {
-          "name": "alpha",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "created_at": {
-          "name": "created_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        },
-        "updated_at": {
-          "name": "updated_at",
-          "type": "timestamp with time zone",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "now()"
-        }
-      },
-      "indexes": {},
-      "foreignKeys": {},
-      "compositePrimaryKeys": {},
-      "uniqueConstraints": {}
-    },
-    "page_colors": {
-      "name": "page_colors",
-      "schema": "",
-      "columns": {
-        "id": {
-          "name": "id",
-          "type": "serial",
-          "primaryKey": true,
-          "notNull": true
-        },
-        "page_title": {
-          "name": "page_title",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "page_url": {
-          "name": "page_url",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "page_hid": {
-          "name": "page_hid",
-          "type": "text",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "page_colors": {
-          "name": "page_colors",
-          "type": "jsonb",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "page_counts": {
-          "name": "page_counts",
-          "type": "bigint",
-          "primaryKey": false,
-          "notNull": false
-        },
-        "pres_colors": {
-          "name": "pres_colors",
+        "deck_meta": {
+          "name": "deck_meta",
           "type": "jsonb",
           "primaryKey": false,
           "notNull": false
@@ -240,7 +372,21 @@
         }
       },
       "indexes": {},
-      "foreignKeys": {},
+      "foreignKeys": {
+        "decks_user_id_users_id_fk": {
+          "name": "decks_user_id_users_id_fk",
+          "tableFrom": "decks",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
       "compositePrimaryKeys": {},
       "uniqueConstraints": {}
     },

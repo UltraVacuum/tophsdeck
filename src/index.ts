@@ -4,23 +4,30 @@ import { migrate } from 'drizzle-orm/postgres-js/migrator';
 import postgres from 'postgres';
 
 import * as schema from './schema';
-
-const { DATABASE_URL } = process.env
+import { cardToInsert } from './schema';
+import cardsMeta from '@/data-raw/cards.json' assert { type: 'json' }
 
 const main = async () => {
+    const { DATABASE_URL } = process.env;
+    if (!DATABASE_URL) {
+        throw new Error('DATABASE_URL environment variable is required');
+    }
     console.log(DATABASE_URL)
-    // const migrationConnection = postgres(process.env.DATABASE_URL!, { max: 1 });
-    const queryConnection = postgres(process.env.DATABASE_URL!, {
+    const conn = postgres(DATABASE_URL, {
         ssl: { rejectUnauthorized: false },
-        no_prepare: true
+        no_prepare: true,
     });
 
-    const db = drizzle(queryConnection, { schema });
-    // await migrate(drizzle(migrationConnection), { migrationsFolder: 'drizzle' });
-    // await migrationConnection.end();
-    const users = await db.query.users.findFirst()
-    // await db.insert(user).values([{ name: 'alef' }, { name: 'bolk' }]);
-    console.log(users);
+    const db = drizzle(conn, { schema });
+    await migrate(db, { migrationsFolder: 'drizzle' });
+
+    for (const card of cardsMeta) {
+        await db.insert(schema.cards)
+            .values(cardToInsert(card as schema.CardMeta))
+            .onConflictDoNothing()
+        console.log('insert data succ:', card.id)
+    }
+    await conn.end();
 };
 
 main();
