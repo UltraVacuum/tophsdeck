@@ -1,4 +1,5 @@
 import { Deck } from "@/types";
+import rawData from "./generated/decks.json";
 
 export const DECKS: Deck[] = [
   {
@@ -2489,6 +2490,85 @@ export const DECKS: Deck[] = [
     },
   },
 ];
+
+// ─── Merge fetched deck data with curated decks ───────────────────
+
+type FetchedDeck = {
+  id?: string;
+  name: string;
+  cardClass: string;
+  format: string;
+  archetype: string;
+  deckCode?: string;
+  cards?: { cardId: string; quantity: number }[];
+  winRate?: number;
+  gamesPlayed?: number;
+  tier?: number;
+  source?: string;
+  url?: string;
+  date?: string;
+};
+
+function normalizeArch(name: string) {
+  return (name || "").toLowerCase().replace(/[^a-z0-9\s]/g, "").replace(/\s+/g, " ").trim();
+}
+
+// Build a match key: class + normalized archetype
+function matchKey(cardClass: string, archetype: string) {
+  return `${cardClass}-${normalizeArch(archetype)}`;
+}
+
+// Update curated decks with latest winRate/tier/gamesPlayed from fetched data
+const fetchedDecks = (rawData as FetchedDeck[]) || [];
+const fetchedMap = new Map<string, FetchedDeck>();
+for (const fd of fetchedDecks) {
+  if (fd.cardClass) {
+    const key = matchKey(fd.cardClass, fd.archetype || fd.name);
+    const existing = fetchedMap.get(key);
+    if (!existing || (fd.winRate || 0) > (existing.winRate || 0)) {
+      fetchedMap.set(key, fd);
+    }
+  }
+}
+
+for (const deck of DECKS) {
+  const key = matchKey(deck.cardClass, deck.archetype);
+  const fd = fetchedMap.get(key);
+  if (fd) {
+    if (fd.winRate) deck.winRate = fd.winRate;
+    if (fd.tier) deck.tier = fd.tier;
+    if (fd.gamesPlayed) deck.gamesPlayed = fd.gamesPlayed;
+    if (fd.date) deck.dateUpdated = fd.date;
+    fetchedMap.delete(key);
+  }
+}
+
+// Add new fetched decks that don't match any curated deck
+const curatedKeys = new Set(DECKS.map((d) => matchKey(d.cardClass, d.archetype)));
+let fetchedIdx = 0;
+for (const fd of fetchedDecks) {
+  const key = fd.cardClass ? matchKey(fd.cardClass, fd.archetype || fd.name) : "";
+  if (key && !curatedKeys.has(key) && fd.cards?.length) {
+    fetchedIdx++;
+    DECKS.push({
+      id: fd.id || `fetched-${fetchedIdx}`,
+      name: fd.name,
+      nameZh: "",
+      cardClass: fd.cardClass as Deck["cardClass"],
+      format: (fd.format === "wild" ? "wild" : "standard") as Deck["format"],
+      archetype: fd.archetype || fd.name,
+      cards: fd.cards,
+      winRate: fd.winRate,
+      gamesPlayed: fd.gamesPlayed,
+      tier: fd.tier,
+      deckCode: fd.deckCode,
+      dateCreated: fd.date || new Date().toISOString().split("T")[0],
+      dateUpdated: fd.date || new Date().toISOString().split("T")[0],
+      tags: [fd.source || "fetched"],
+    });
+    curatedKeys.add(key);
+  }
+}
 
 export function getDeckById(id: string): Deck | undefined {
   return DECKS.find((d) => d.id === id);
