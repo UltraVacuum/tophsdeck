@@ -185,17 +185,34 @@ export default function HomePage() {
                 </Button>
               </Link>
             </div>
-            {latestNews.map((item) => (
-              <div key={item.id} className="rounded-lg p-3 bg-secondary/40 border border-border/20">
-                <div className="flex items-center gap-2 mb-1">
-                  <Badge variant="outline" className="text-[10px] bg-primary/5 text-primary border-primary/15">
-                    {item.category === "patch" ? "补丁" : item.category === "event" ? "活动" : item.category === "esports" ? "电竞" : "攻略"}
-                  </Badge>
-                  <span className="text-[10px] text-muted-foreground">{item.date}</span>
+            {latestNews.map((item) => {
+              const catLabel = item.category === "patch" ? "补丁"
+                : item.category === "event" ? "活动"
+                : item.category === "esports" ? "电竞"
+                : item.category === "expansion" ? "扩展" : "攻略";
+              const srcLabel = item.source === "hearthstone" ? "官方"
+                : item.source === "hearthstonetopdecks" ? "HSTD"
+                : item.source === "reddit" ? "Reddit" : item.source;
+              const inner = (
+                <div className="rounded-lg p-3 bg-secondary/40 border border-border/20 hover:border-border transition-colors">
+                  <div className="flex items-center gap-1.5 mb-1">
+                    <Badge variant="outline" className="text-[10px] bg-primary/5 text-primary border-primary/15">
+                      {catLabel}
+                    </Badge>
+                    {srcLabel && (
+                      <Badge variant="secondary" className="text-[9px]">{srcLabel}</Badge>
+                    )}
+                    <span className="text-[10px] text-muted-foreground">{item.date}</span>
+                  </div>
+                  <p className="text-sm font-medium leading-snug line-clamp-2">{item.title}</p>
                 </div>
-                <p className="text-sm font-medium leading-snug">{item.title}</p>
-              </div>
-            ))}
+              );
+              return item.link ? (
+                <Link key={item.id} href={item.link} target="_blank" rel="noopener noreferrer">{inner}</Link>
+              ) : (
+                <div key={item.id}>{inner}</div>
+              );
+            })}
 
             {/* Quick links */}
             <div className="grid grid-cols-2 gap-2 pt-1">

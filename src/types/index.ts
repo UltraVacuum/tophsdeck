@@ -158,8 +158,9 @@ export interface NewsItem {
   id: string;
   title: string;
   summary: string;
-  category: "patch" | "event" | "esports" | "guide";
+  category: "patch" | "event" | "esports" | "guide" | "expansion";
   date: string;
   imageUrl?: string;
   link?: string;
+  source?: string;
 }
