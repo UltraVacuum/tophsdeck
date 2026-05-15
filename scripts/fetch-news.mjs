@@ -15,9 +15,9 @@ import { writeFileSync, readFileSync, existsSync } from 'node:fs';
 import { execFileSync } from 'node:child_process';
 
 // Safe curl wrapper using execFileSync (no shell injection risk)
-function curl(url) {
+function curl(url, ua = 'Mozilla/5.0 (compatible; TopHSDeck Bot)') {
   try {
-    return execFileSync('curl', ['-sL', '-A', 'Mozilla/5.0 (compatible; TopHSDeck Bot)', url], {
+    return execFileSync('curl', ['-sL', '-A', ua, url], {
       encoding: 'utf-8',
       timeout: 30000,
       maxBuffer: 5 * 1024 * 1024,
@@ -92,14 +92,43 @@ function merge(existing, fetched) {
     .slice(0, 50);
 }
 
+function parseRedditJSON(json) {
+  try {
+    const data = JSON.parse(json);
+    return data.data.children
+      .filter(p => p.kind === 't3' && !p.data.sticky && !p.data.pinned)
+      .map(p => {
+        const d = p.data;
+        const date = new Date(d.created_utc * 1000).toISOString().split('T')[0];
+        let category = 'guide';
+        const t = (d.title || '').toLowerCase();
+        if (/patch|balance|nerf|buff|update|hotfix|调整|削弱|增强|补丁/.test(t)) category = 'patch';
+        else if (/event|promo|reward|活动|奖励|促销/.test(t)) category = 'event';
+        else if (/esport|tournament|championship|master|电竞|大师赛|锦标赛/.test(t)) category = 'esports';
+        else if (/expansion|reveal|launch|cataclysm|扩展|新卡|发布/.test(t)) category = 'expansion';
+        return {
+          id: `reddit-${d.id}`,
+          title: d.title,
+          summary: (d.selftext || '').replace(/\n/g, ' ').trim().slice(0, 300) || decodeHTML(d.title),
+          category,
+          date,
+          link: `https://www.reddit.com${d.permalink}`,
+          source: 'reddit',
+        };
+      });
+  } catch {
+    return [];
+  }
+}
+
 async function main() {
   console.log('=== FetchNews ===\n');
   let all = [];
 
-  // Source 1: Reddit /r/hearthstone (most active community)
-  console.log('1. Reddit /r/hearthstone...');
-  const redditXml = curl('https://www.reddit.com/r/hearthstone/.rss');
-  const redditItems = parseRSS(redditXml, 'reddit');
+  // Source 1: Reddit /r/hearthstone JSON API (RSS is blocked)
+  console.log('1. Reddit /r/hearthstone (JSON API)...');
+  const redditJson = curl('https://www.reddit.com/r/hearthstone/hot.json?limit=25', 'TopHSDeck/1.0');
+  const redditItems = parseRedditJSON(redditJson);
   console.log(`   ${redditItems.length} articles`);
   all.push(...redditItems);
 
