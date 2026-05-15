@@ -1,0 +1,299 @@
+[
+  {
+    "id": "news-reddit-01",
+    "title": "CATACLYSM环境讨论：开局手牌决定胜负成热议话题",
+    "summary": "玩家发帖讨论当前CATACLYSM环境中游戏节奏过快、开局手牌决定胜负的问题。到传说后感叹“游戏在前6-8张牌时就已分出胜负”，引发社区广泛讨论。",
+    "category": "guide",
+    "date": "2026-05-15",
+    "link": "https://www.reddit.com/r/hearthstone/comments/1tdvtuo/just_got_to_legend_and_whole_meta_is_extremely/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-reddit-02",
+    "title": "玩家回归录像：CATACLYSM吸引老玩家重返",
+    "summary": "一位退坑多年的老玩家因CATACLYSM主题回归炉石传说，从泡泡圣骑士开始上手，最终以约70%胜率上传说。该玩家表示大福利·死亡骑士是全新的体验。",
+    "category": "guide",
+    "date": "2026-05-15",
+    "link": "https://www.reddit.com/r/hearthstone/comments/1tdt05j/obligatory_first_time_legend_in_years_post_quit/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-hearthstonetopdecks-05",
+    "title": "当前标准模式T1卡组：Broxigar恶魔猎手、光环圣骑士领衢",
+    "summary": "HSTD更新标准模式卡组梯队：亡语/Broăigar恶魔猎手、光环圣骑士、尸体死亡骑士、悬崖潜水恶魔猎手、龙族战士等卡组位居榜首。",
+    "category": "guide",
+    "date": "2026-05-15",
+    "link": "https://www.hearthstonetopdecks.com",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "news-reddit-03",
+    "title": "玩家发现无限伤害Norgannon套路：美服已确认",
+    "summary": "一位玩家发现利用迁徙陆行象的战吼机制，可以让Norgannon的能力数值超过百万，显示为无穷大符号。这一发现引发社区热议。",
+    "category": "guide",
+    "date": "2026-05-15",
+    "link": "https://www.reddit.com/r/hearthstone/comments/1tdknji/how_to_get_the_infinite_damage_norgannon/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-reddit-04",
+    "title": "CATACLYSM签名巨型卡将回归商店？玩家热切期待",
+    "summary": "有玩家询问CATACLYSM的签名巨型卡是否会重新上架商店，因为阿莱克的签名卡很快就被下架了。社区对这类限时商店物品的上架时间表示关注。",
+    "category": "guide",
+    "date": "2026-05-15",
+    "link": "https://www.reddit.com/r/hearthstone/comments/1tdycmz/do_you_know_if_the_signature_colossal_cards_from/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-hearthstonetopdecks-01",
+    "title": "vS Data Reaper Report #349：CATACLYSM环境最新数据报告",
+    "summary": "Vicious Syndicate发布第349期数据报告，基于230万场比赛数据分析当前环境。泡泡圣骑士、Broxigar恶魔猎手、尸体死亡骑士等卡组仍占据环境主流。",
+    "category": "guide",
+    "date": "2026-05-14",
+    "link": "https://www.vicioussyndicate.com/vs-data-reaper-report-349/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-hearthstone-01",
+    "title": "35.4 Patch Notes: Class Sets横空出世，复苏艾泽拉斯全新玩法",
+    "summary": "Patch 35.4于5月即日上线，带来全新的“职业套装”机制，取代传统迷你包。第一波包含德鲁伊、猎人、圣骑士、法师四个职业的28张新卡，同时双职业竞技场回归。",
+    "category": "patch",
+    "date": "2026-05-05",
+    "link": "https://playhearthstone.com/en-us/blog/24266874/",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-03",
+    "title": "龙魂覚醒活动：力量召唤破碎龙魂",
+    "summary": "5月26日至6月2日，参与“红玉圣坛”活动保护红龙蛋，获得德鲁伊、猎人、法师、圣骑士卡包及2张酒馆门票。",
+    "category": "event",
+    "date": "2026-05-05",
+    "link": "https://playhearthstone.com/en-us/blog/24266874/",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-04",
+    "title": "锻造龙魂活动：终极对决死亡之翼",
+    "summary": "5月5日至26日，参与“锻造龙魂”活动对抗死亡之翼的入侵，获得龙魂·破碎者卡牌、各职业卡包、金色CATACLYSM包、团队副本卡背及勇气点数币。",
+    "category": "event",
+    "date": "2026-05-05",
+    "link": "https://playhearthstone.com/en-us/blog/24266874/",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-reddit-05",
+    "title": "复苏艾泽拉斯卡牌资源价值讨论：职业套装值得买吗？",
+    "summary": "社区讨论复苏艾泽拉斯职业套装的价值，单个职业$9.99或1200金币，全部四个职业套装$19.99或2500金币。玩家们分析了各职业新卡的实用性。",
+    "category": "guide",
+    "date": "2026-05-05",
+    "link": "https://www.reddit.com/r/hearthstone/comments/1t4kxni/restoration_of_azeroth_heartharena_tierlist_update/",
+    "source": "reddit"
+  },
+  {
+    "id": "news-hearthstone-02",
+    "title": "复苏艾泽拉斯：全新职业套装卡牌披露",
+    "summary": "暴雪公布“复苏艾泽拉斯”职业套装详情，德鲁伊、猎人、圣骑士、法师各获1传说+2史诗+2稀有+2普通卡牌。这是炉石传说全新的发布模式，将在三个波次中逐步推出。",
+    "category": "expansion",
+    "date": "2026-05-04",
+    "link": "https://news.blizzard.com/en-us/article/24267730/take-a-first-look-at-hearthstones-new-class-sets",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-06",
+    "title": "炉石传说冬季锦标赛来袭！Kwanwoo勇夺冠军",
+    "summary": "炉石传说2026年首场大师赛——冬季锦标赛于4月10-12日举行。韩国选手Kwanwoo夺得冠军及$10,000奖金，法国Gaby59与白俄罗斯SAVER分获亚季和季军。前三名均获得2026世界赛资格。",
+    "category": "esports",
+    "date": "2026-04-12",
+    "link": "https://liquipedia.net/hearthstone/Masters_Tour/Winter_Championship/2026",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-07",
+    "title": "冬季锦标赛观赛指南：免费获取CATACLYSM卡包",
+    "summary": "暴雪发布冬季锦标赛观赛指南，4月10-12日每天可获1包CATACLYSM卡包。赛事采用4副征服制Ban一格式，16名顶尖玩家争夺$50,000奖池及世界赛名额。",
+    "category": "esports",
+    "date": "2026-04-03",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24265939/the-hearthstone-winter-championship-is-here",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-08",
+    "title": "35.0.3补丁更新：德鲁伊大削弱、黑血增强",
+    "summary": "4月2日补丁重点削弱德鲁伊：哈穆尔·符文图腾从每2法术触发改为每3法术、野木树林费用从3提到、4。同时增强黑血包裹、月井、不安分子等卡牌，让新卡组获得发展空间。",
+    "category": "patch",
+    "date": "2026-04-02",
+    "link": "https://news.blizzard.com/en-us/article/24271854/35-0-3-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-09",
+    "title": "35.0.3战场更新：金属分发器削弱、龙族增强",
+    "summary": "战场模式进行季末平衡调整：金属分发器和丝绒闪光蛾被削弱，龙族、海盗、鱼人、元素获得增强。同时回归“金币对决”和“戈尔加尼之风暴”异常。",
+    "category": "patch",
+    "date": "2026-04-02",
+    "link": "https://news.blizzard.com/en-us/article/24271854/35-0-3-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-10",
+    "title": "35.0.3 Wild模式更新：禁止零费闪现、限制Rommath",
+    "summary": "Wild模式重磅更新：光速改为回响关键字禁止零费互动，星界沟通费用从4提到、5，罗曼斯被限制为每局仅能触发一次战吼。",
+    "category": "patch",
+    "date": "2026-04-02",
+    "link": "https://news.blizzard.com/en-us/article/24271854/35-0-3-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthpwn-01",
+    "title": "35.0.3补丁完整补丁说明：标准/狂野/战场平衡调整",
+    "summary": "HearthPwn详细记录了35.0.3补丁的全部内容，包括标准模式中德鲁伊、萨满、战士的削弱以及黑血/月井的增强，Wild模式和战场模式同步更新。",
+    "category": "patch",
+    "date": "2026-04-02",
+    "link": "https://www.hearthpwn.com/news/12336-35-0-3-patch-notes-standard-wild-battlegrounds",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "news-hearthstone-15",
+    "title": "死亡之翼降临暮光市集宝包！神话英雄皮肤震撼登场",
+    "summary": "暴雪推出“暮光市集宝包”抽奖活动，顶级奖励为死亡之翼神话英雄皮肤+签名版死亡之翼传说卡。该皮肤拥有全套自定义动画、棋盘角落互动和胜利火焰特效。",
+    "category": "event",
+    "date": "2026-03-20",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24267727/35-0-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-11",
+    "title": "CATACLYSM扩展包正式上线！死亡之翼降临艾泽拉斯",
+    "summary": "CATACLYSM扩展包于3月17日正式发布，带来135张新卡、首张死亡之翼英雄卡、全新“传令”关键字及破碎机制。玩家可免费使用“梦境试练卡”体验翡翠梦境与安戈洛的全部卡牌。",
+    "category": "expansion",
+    "date": "2026-03-17",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24267727/35-0-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-12",
+    "title": "CATACLYSM社区活动及赛季奖励公布",
+    "summary": "暴雪公布CATACLYSM发布前社区活动详情，包含预发售酒馆乱斗、社区日等活动。赛季活动奖励包括多个CATACLYSM卡包、沉石龙伤萨尔英雄皮肤等。",
+    "category": "event",
+    "date": "2026-03-10",
+    "link": "https://playhearthstone.com/en-us/blog/24246209/",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-13",
+    "title": "35.0补丁更新：圣甲年开始、大量卡牌平衡调整",
+    "summary": "Patch 35.0于3月10日上线，迎接圣甲年。大量卡牌平衡调整包括伊利丝·导航员、史莱德兽、石雕师等被削弱，多张卡牌回退Wild时恢复原始版本。全新竞技场赛季同步开启。",
+    "category": "patch",
+    "date": "2026-03-10",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24267727/35-0-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstone-14",
+    "title": "免费梦境试练卡：翡翠梦境与安戈洛卡牌免费用",
+    "summary": "从3月10日起，所有玩家免费获得“翡翠梦境”和“安戈洛的丢失之城”全部卡牌（含金色版）的使用权，持续至下个扩展包发布。已拥有绝大部分卡牌的玩家可获得特殊签名传说卡。",
+    "category": "event",
+    "date": "2026-03-10",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24267727/35-0-patch-notes",
+    "source": "hearthstone"
+  },
+  {
+    "id": "news-hearthstonetopdecks-03",
+    "title": "Hearthstone Top Decks重要通告：网站将停止更新",
+    "summary": "HSTD网站管理员Stonekeep宣布由于与ZAM公司的合同到期，网站将不再更新。尽管时机不佳（CATACLYSM即将发布），但网站将很难继续运营。",
+    "category": "guide",
+    "date": "2026-03-04",
+    "link": "https://www.hearthstonetopdecks.com/important-notice-regarding-hearthstone-top-decks/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "news-hearthstonetopdecks-02",
+    "title": "CATACLYSM扩展包完整指南：卡牌披露、发布日期、新机制",
+    "summary": "Hearthstone Top Decks发布CATACLYSM扩展包完整指南，涵盖135张新卡、传令关键字、破碎机制、大型传说怪物等内容。死亡之翼英雄卡可通过传令关键字不断升级。",
+    "category": "expansion",
+    "date": "2026-03-03",
+    "link": "https://www.hearthstonetopdecks.com/cataclysm-expansion-guide/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "news-hearthstonetopdecks-04",
+    "title": "CATACLYSM社区活动及平衡补丁预览",
+    "summary": "HSTD详细介绍了CATACLYSM发布前的社区活动安排，以及即将到来的35.0补丁平衡调整预览，包含多张标准模式卡牌的削弱和增强。",
+    "category": "patch",
+    "date": "2026-03-03",
+    "link": "https://www.hearthstonetopdecks.com/cataclysm-community-events-and-balance-patch-preview/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "Top Standard & Wild Legend Decks – Across the Timeways (Week 17) – March 2026",
+    "summary": "I haven't expected to see any patches until 35.0 (other than hotfixes, of course), but Blizzard surprised us earlier this week with 34.6.2 balance update. The main focus of the update was clearly Battlegrounds, but we also got a few changes in Standard and even Wild. Well, to be more precise, in [..",
+    "category": "guide",
+    "date": "2026-03-01",
+    "link": "https://www.hearthstonetopdecks.com/top-standard-wild-legend-decks-across-the-timeways-week-17-march-2026/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "34.6.3 Hotfix Patch Notes",
+    "summary": "Blizzard just posted patch notes for the 34.6.1 update. It's a server-side hotfix rolling out today. As usual with those kinds of patches, you don't have to download anything, but you might not see it immediately (it takes a while to get it out to all players). It's a mid-sized hotfix patch [...]",
+    "category": "patch",
+    "date": "2026-02-26",
+    "link": "https://www.hearthstonetopdecks.com/34-6-3-hotfix-patch-notes/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "Tavern Brawl – Showdown at Blackrock Mountain",
+    "summary": "This week's Tavern Brawl is \"Showdown at Blackrock Mountain\"! Discuss this Tavern Brawl on our Discord! Official Description for Showdown at Blackrock Mountain The two epic bosses of Blackrock Mountain are settling things once and for all... with your help! [...]",
+    "category": "guide",
+    "date": "2026-02-25",
+    "link": "https://www.hearthstonetopdecks.com/tavern-brawl-showdown-at-blackrock-mountain/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "Shop Update: Returning Hero Skins, Signature Bundles",
+    "summary": "Another shop update dropped today (well, technically yesterday, but I didn't check so here we are)! It's a pretty big update focused on returning skins and Signature cards/bundles. When it comes to skins, we have 4 of them, including two that were previously exclusive to Battlegrounds. And, as usual",
+    "category": "patch",
+    "date": "2026-02-24",
+    "link": "https://www.hearthstonetopdecks.com/shop-update-february-24-2026/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "(Live Now!) Hearthstone 34.6.2 Patch Notes – Standard, Wild and Battlegrounds Balance Changes",
+    "summary": "Update: The patch is now live! Enjoy! Blizzard just posted patch notes for the 34.6.2 update, which is releasing later today. The patch was already teaser yesterday, so we knew what cards are getting changed, but now we also know how! In Standard, we're getting a single card change [...]",
+    "category": "patch",
+    "date": "2026-02-24",
+    "link": "https://www.hearthstonetopdecks.com/hearthstone-34-6-2-patch-notes/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "Hearthstone 34.6.2 Patch Teaser – Standard, Wild & Battlegrounds Balance Update",
+    "summary": "Blizzard just posted a teaser of the upcoming balance update for Standard, Wild and Battlegrounds modes! It's most likely the final balance update before Patch 35.0 (CATACLYSM patch). In Standard, the update is very small, with just a single nerf to [card_link name=\"Warmaster Blackhorn\"]. It's a fre",
+    "category": "patch",
+    "date": "2026-02-23",
+    "link": "https://www.hearthstonetopdecks.com/hearthstone-34-6-2-patch-teaser/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "hearthstonetopdecks-aHR0cHM6Ly93d3cu",
+    "title": "Top Standard & Wild Legend Decks – Across the Timeways (Week 16) – February 2026",
+    "summary": "Card reveal season for the upcoming CATACLYSM expansion has started in full earlier this week with a new formula. Instead of having multiple smaller reveals every day, most of them are focused in those bigger dumps. We still get a single card reveal here and there, but they are far less common. From",
+    "category": "guide",
+    "date": "2026-02-22",
+    "link": "https://www.hearthstonetopdecks.com/top-standard-wild-legend-decks-across-the-timeways-week-16-february-2026/",
+    "source": "hearthstonetopdecks"
+  },
+  {
+    "id": "news-hearthstone-05",
+    "title": "暴雪发布2026年电竞赛事计划：三场大师赛+暴雪嘉年华世界赛",
+    "summary": "暴雪宣布2026年电竞赛事计划：三场大师赛年度锦标赛（冬季、春季、夏季），每场奖池$50,000。世界赛将在暴雪嘉年华现场举办，奖池$500,000，冠军将于9月13日诞生。",
+    "category": "esports",
+    "date": "2025-12-18",
+    "link": "https://hearthstone.blizzard.com/en-us/news/24245108/prepare-for-hearthstone-esports-in-2026",
+    "source": "hearthstone"
+  }
+]

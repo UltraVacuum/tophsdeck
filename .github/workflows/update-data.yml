@@ -1,0 +1,62 @@
+name: Update Site Data
+
+on:
+  schedule:
+    # Every day at 08:00 UTC (16:00 Beijing time)
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch latest card data
+        run: node scripts/fetch-cards.mjs
+
+      - name: Fetch latest news
+        run: node scripts/fetch-news.mjs
+
+      - name: Check for changes
+        id: check
+        run: |
+          CHANGED=false
+          if ! git diff --quiet src/data/generated/; then
+            CHANGED=true
+            echo "Changes detected:"
+            git diff --stat src/data/generated/
+          fi
+          echo "has_changes=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Build to verify
+        if: steps.check.outputs.has_changes == 'true'
+        run: npm run build
+
+      - name: Commit and push
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated/
+          git commit -m "chore: auto-update data ($(date -u +%Y-%m-%d))"
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## ${{ steps.check.outputs.has_changes == 'true' && '✅ Updated' || 'ℹ️ No changes' }}" >> $GITHUB_STEP_SUMMARY
+          echo "$(date -u +%Y-%m-%d)" >> $GITHUB_STEP_SUMMARY
