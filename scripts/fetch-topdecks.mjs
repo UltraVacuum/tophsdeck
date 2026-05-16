@@ -147,13 +147,14 @@ function parseTierList(html) {
     }
     if (!tierName) continue;
 
-    const itemRe = /alt="([^"]*?\sIcon)"[^>]*>\s*([^<]+)<\/a>/g;
+    const itemRe = /href="([^"]*\/deck-type\/[^"]*)"[^>]*>[\s\S]*?alt="([^"]*?\sIcon)"[^>]*>\s*([^<]+)<\/a>/g;
     let m;
     while ((m = itemRe.exec(section)) !== null) {
-      const cardClass = classFromIcon(m[1]);
-      const name = m[2].trim().replace(/&#8211;/g, '-').replace(/&amp;/g, '&');
+      const archetypeUrl = m[1];
+      const cardClass = classFromIcon(m[2]);
+      const name = m[3].trim().replace(/&#8211;/g, '-').replace(/&amp;/g, '&');
       if (cardClass && name) {
-        archetypes.push({ name, cardClass, tier: tierLevel, tierName });
+        archetypes.push({ name, cardClass, tier: tierLevel, tierName, archetypeUrl });
       }
     }
   }
@@ -191,6 +192,65 @@ function parseFeaturedDecks(html) {
   return decks;
 }
 
+// ─── Deckstring Decoder ──────────────────────────────────────────
+
+function decodeDeckstring(code) {
+  const buf = Buffer.from(code, 'base64');
+  let p = 0;
+  function rv() {
+    let r = 0n, s = 0n, b;
+    do { b = BigInt(buf[p++]); r |= (b & 0x7fn) << s; s += 7n; } while (b & 0x80n);
+    return Number(r);
+  }
+
+  rv(); // header (0)
+  rv(); // version (1)
+  const format = rv();
+  const numHeroes = rv();
+  for (let i = 0; i < numHeroes; i++) rv();
+
+  const cards = [];
+
+  // Single-copy
+  const n1 = rv();
+  for (let i = 0; i < n1; i++) cards.push({ dbfId: rv(), quantity: 1 });
+
+  // Double-copy
+  const n2 = rv();
+  for (let i = 0; i < n2; i++) cards.push({ dbfId: rv(), quantity: 2 });
+
+  // Multi-copy
+  const n3 = rv();
+  for (let i = 0; i < n3; i++) cards.push({ dbfId: rv(), quantity: rv() });
+
+  return { format, cards };
+}
+
+// ─── Fetch helpers ───────────────────────────────────────────────
+
+async function fetchDeckCodeFromPage(page, url) {
+  try {
+    await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    const html = await page.content();
+    const m = html.match(/data-deck-code="([^"]+)"/);
+    const dustMatch = html.match(/Dust Cost:?\s*([\d,]+)/i);
+    return {
+      deckCode: m ? m[1] : null,
+      dustCost: dustMatch ? parseInt(dustMatch[1].replace(/,/g, '')) : null,
+    };
+  } catch { return { deckCode: null, dustCost: null }; }
+}
+
+async function getFirstDeckUrlFromArchetype(page, archetypeUrl) {
+  try {
+    await page.goto(archetypeUrl, { waitUntil: 'domcontentloaded', timeout: 20000 });
+    const html = await page.content();
+    // Get first link to a specific deck (not deck-type link)
+    const m = html.match(/href="(https:\/\/www\.hearthstonetopdecks\.com\/decks\/[^"]*\/)"/);
+    return m ? m[1] : null;
+  } catch { return null; }
+}
+
 // ─── Main ───────────────────────────────────────────────────────
 
 async function main() {
@@ -218,33 +278,80 @@ async function main() {
   console.log(`  ${tierList.length} tier list archetypes`);
   console.log(`  ${featuredDecks.length} featured decks`);
 
-  // Step 3: Fetch deck codes for featured standard decks
-  const standardDecks = featuredDecks.filter(d => d.format === 'standard').slice(0, 8);
-  console.log(`\nFetching deck codes for ${standardDecks.length} standard decks...`);
+  // Step 3: Fetch deck codes from featured standard decks
+  const standardFeatured = featuredDecks.filter(d => d.format === 'standard').slice(0, 8);
+  console.log(`\nPhase 1: Fetching deck codes from ${standardFeatured.length} featured decks...`);
 
-  const deckDetails = [];
-  for (const deck of standardDecks) {
-    try {
-      await page.goto(deck.url, { waitUntil: 'domcontentloaded', timeout: 20000 });
-      const html = await page.content();
+  const deckCodeMap = {}; // deckId → { deckCode, dustCost, sourceUrl, rank, player }
 
-      const codeMatch = html.match(/data-deck-code="([^"]+)"/);
-      const dustMatch = html.match(/Dust Cost:?\s*([\d,]+)/i);
-      const deckCode = codeMatch ? codeMatch[1] : null;
-      const dustCost = dustMatch ? parseInt(dustMatch[1].replace(/,/g, '')) : null;
-
-      if (deckCode) {
-        deckDetails.push({ ...deck, deckCode, dustCost });
-        console.log(`  ${deck.deckName}: ${deckCode.slice(0, 20)}... (dust: ${dustCost})`);
+  for (const deck of standardFeatured) {
+    const { deckCode, dustCost } = await fetchDeckCodeFromPage(page, deck.url);
+    if (deckCode) {
+      const norm = normalize(deck.deckName);
+      const id = ARCHETYPE_ID_MAP[norm];
+      if (id) {
+        deckCodeMap[id] = { deckCode, dustCost, sourceUrl: deck.url, rank: deck.rank, player: deck.player };
+        console.log(`  ✓ ${deck.deckName}: ${deckCode.slice(0, 24)}...`);
       }
-    } catch {
-      console.log(`  Failed: ${deck.deckName}`);
     }
     await page.waitForTimeout(300);
   }
 
+  // Step 4: Fill gaps by visiting archetype pages for remaining archetypes
+  const missingArchetypes = tierList.filter(t => {
+    const norm = normalize(t.name);
+    const id = ARCHETYPE_ID_MAP[norm];
+    return id && !deckCodeMap[id] && t.archetypeUrl;
+  });
+  console.log(`\nPhase 2: Fetching deck codes from ${missingArchetypes.length} archetype pages...`);
+
+  for (const arch of missingArchetypes) {
+    const firstDeckUrl = await getFirstDeckUrlFromArchetype(page, arch.archetypeUrl);
+    if (!firstDeckUrl) { console.log(`  ✗ ${arch.name}: no deck link found`); continue; }
+
+    await page.waitForTimeout(200);
+    const { deckCode, dustCost } = await fetchDeckCodeFromPage(page, firstDeckUrl);
+    if (deckCode) {
+      const norm = normalize(arch.name);
+      const id = ARCHETYPE_ID_MAP[norm];
+      if (id) {
+        deckCodeMap[id] = { deckCode, dustCost, sourceUrl: firstDeckUrl };
+        console.log(`  ✓ ${arch.name}: ${deckCode.slice(0, 24)}...`);
+      }
+    } else {
+      console.log(`  ✗ ${arch.name}: no deck code`);
+    }
+    await page.waitForTimeout(200);
+  }
+
   await page.close();
   await browser.close();
+
+  console.log(`\nTotal deck codes: ${Object.keys(deckCodeMap).length}/${tierList.length} archetypes`);
+
+  // Step 5: Decode deck codes → card lists
+  console.log('\nDecoding deck codes...');
+  const cardsJson = JSON.parse(readFileSync('src/data/generated/cards-full.json', 'utf-8'));
+  const dbfMap = {};
+  for (const c of cardsJson) dbfMap[c.dbfId] = c;
+
+  for (const [id, data] of Object.entries(deckCodeMap)) {
+    try {
+      const decoded = decodeDeckstring(data.deckCode);
+      const cards = decoded.cards.map(c => ({
+        dbfId: c.dbfId,
+        name: dbfMap[c.dbfId]?.name || `Unknown(${c.dbfId})`,
+        cardId: dbfMap[c.dbfId]?.id || '',
+        quantity: c.quantity,
+      }));
+      data.cards = cards;
+      data.cardCount = cards.reduce((s, c) => s + c.quantity, 0);
+      data.decodedFormat = decoded.format;
+    } catch {
+      data.cards = [];
+      data.cardCount = 0;
+    }
+  }
 
   // Build overlay
   const archetypes = {};
@@ -254,37 +361,17 @@ async function main() {
     const norm = normalize(t.name);
     const id = ARCHETYPE_ID_MAP[norm];
     if (id) {
+      const dc = deckCodeMap[id];
       archetypes[id] = {
-        ...(archetypes[id] || {}),
         tier: t.tier,
         tierName: t.tierName,
         cardClass: t.cardClass,
         archetypeName: t.name,
+        ...(dc || {}),
       };
       matched++;
     } else {
       console.log(`  Unmatched tier: "${t.name}" (${norm}) [${t.cardClass}]`);
-    }
-  }
-
-  for (const d of deckDetails) {
-    const norm = normalize(d.deckName);
-    const id = ARCHETYPE_ID_MAP[norm];
-    if (id && archetypes[id]) {
-      archetypes[id].deckCode = d.deckCode;
-      archetypes[id].dustCost = d.dustCost;
-      archetypes[id].sourceUrl = d.url;
-      archetypes[id].rank = d.rank;
-      archetypes[id].player = d.player;
-    } else if (id) {
-      archetypes[id] = {
-        ...archetypes[id],
-        deckCode: d.deckCode,
-        dustCost: d.dustCost,
-        sourceUrl: d.url,
-        rank: d.rank,
-        player: d.player,
-      };
     }
   }
 
@@ -293,18 +380,19 @@ async function main() {
     process.exit(0);
   }
 
+  const deckCodeCount = Object.values(archetypes).filter(a => a.deckCode).length;
+
   const result = {
     lastFetch: new Date().toISOString(),
     source: 'hearthstonetopdecks',
     fetchSuccess: matched > 0,
     tierListCount: tierList.length,
-    featuredDeckCount: featuredDecks.length,
-    deckCodeCount: deckDetails.length,
+    deckCodeCount,
     archetypes,
   };
 
   writeFileSync(OUT, JSON.stringify(result, null, 2));
-  console.log(`\nWritten: ${OUT} (${Object.keys(archetypes).length} archetypes, ${deckDetails.length} deck codes)`);
+  console.log(`\nWritten: ${OUT} (${Object.keys(archetypes).length} archetypes, ${deckCodeCount} deck codes)`);
 }
 
 main().catch(e => { console.error(e); process.exit(1); });

@@ -103,11 +103,22 @@ export interface Deck {
   playStyle?: string;
   dateCreated: string;
   dateUpdated: string;
+  lastUpdated?: string;
   deckCode?: string;
+  /** 从 deck code 解码的完整卡牌列表（含卡牌名称） */
+  decodedCards?: DecodedCard[];
   /** 完整攻略内容 */
   guide?: DeckGuide;
   /** 标签（用于搜索和筛选） */
   tags?: string[];
+  source?: string;
+}
+
+export interface DecodedCard {
+  dbfId: number;
+  name: string;
+  cardId: string;
+  quantity: number;
 }
 
 export interface DeckCardEntry {

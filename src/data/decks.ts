@@ -21,6 +21,8 @@ interface TopDecksMeta {
   sourceUrl?: string;
   rank?: number;
   player?: string;
+  cards?: { dbfId: number; name: string; cardId: string; quantity: number }[];
+  cardCount?: number;
 }
 
 interface MetaOverlay {
@@ -66,6 +68,7 @@ export const DECKS: Deck[] = (rawData as Deck[]).map((deck) => {
       tier: td.tier ?? merged.tier,
       deckCode: td.deckCode ?? merged.deckCode,
       dustCost: td.dustCost ?? merged.dustCost,
+      decodedCards: td.cards?.length ? td.cards : undefined,
       source: td.deckCode ? 'hearthstonetopdecks' : merged.source,
     };
   }
