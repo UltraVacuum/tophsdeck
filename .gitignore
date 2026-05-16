@@ -41,3 +41,6 @@ next-env.d.ts
 # Downloaded card images (we use CDN URLs)
 public/images/cards/
 .gstack/
+.claude/
+.next/
+.worktrees/
