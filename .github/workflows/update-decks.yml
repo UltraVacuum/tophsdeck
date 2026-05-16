@@ -1,8 +1,8 @@
-name: Update Decks
+name: Update Deck Meta
 
 on:
   schedule:
-    # Every 12 hours at minute 17 (avoid :00 congestion)
+    # Every 12 hours at minute 17
     - cron: "17 */12 * * *"
   workflow_dispatch:
 
@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  update-decks:
+  update-meta:
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -30,20 +30,41 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
-      - name: Fetch latest deck data
+      - name: Fetch archetype meta from HSReplay
         run: node scripts/fetch-decks.mjs
         env:
           NODE_OPTIONS: "--max-old-space-size=2048"
 
+      - name: Fetch tier list & deck codes from TopDecks
+        run: node scripts/fetch-topdecks.mjs
+        env:
+          NODE_OPTIONS: "--max-old-space-size=2048"
+
+      - name: Validate meta data
+        id: validate
+        run: |
+          META_COUNT=$(node -e "const m=require('./src/data/generated/meta-overlay.json'); console.log(Object.keys(m.archetypes||{}).length)")
+          TD_COUNT=$(node -e "const t=require('./src/data/generated/topdecks-overlay.json'); console.log(Object.keys(t.archetypes||{}).length)")
+          echo "meta_count=$META_COUNT" >> "$GITHUB_OUTPUT"
+          echo "td_count=$TD_COUNT" >> "$GITHUB_OUTPUT"
+          if [ "$META_COUNT" -lt 5 ] && [ "$TD_COUNT" -lt 3 ]; then
+            echo "⚠️ Too few results — skipping commit"
+            echo "valid=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "✅ $META_COUNT meta + $TD_COUNT topdecks archetypes"
+            echo "valid=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Check for changes
+        if: steps.validate.outputs.valid == 'true'
         id: check
         run: |
-          if git diff --quiet src/data/generated/decks.json; then
+          if git diff --quiet src/data/generated/meta-overlay.json src/data/generated/topdecks-overlay.json; then
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           else
             echo "has_changes=true" >> "$GITHUB_OUTPUT"
             echo "Changes:"
-            git diff --stat src/data/generated/decks.json
+            git diff --stat src/data/generated/
           fi
 
       - name: Build to verify
@@ -55,17 +76,69 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add src/data/generated/decks.json
+          git add src/data/generated/meta-overlay.json src/data/generated/topdecks-overlay.json
           NOW=$(date -u '+%Y-%m-%d %H:%M')
-          git commit -m "chore: update deck data (${NOW} UTC)"
+          git commit -m "chore: update deck meta & tier data (${NOW} UTC)"
           git push
 
       - name: Summary
         if: always()
         run: |
-          if [ "${{ steps.check.outputs.has_changes }}" = "true" ]; then
-            echo "## ✅ Decks updated" >> $GITHUB_STEP_SUMMARY
+          VALID="${{ steps.validate.outputs.valid }}"
+          CHANGES="${{ steps.check.outputs.has_changes }}"
+          if [ "$CHANGES" = "true" ]; then
+            echo "## ✅ Data updated (${{ steps.validate.outputs.meta_count }} meta + ${{ steps.validate.outputs.td_count }} topdecks archetypes)" >> $GITHUB_STEP_SUMMARY
+          elif [ "$VALID" = "false" ]; then
+            echo "## ⚠️ Scrape returned too few results — skipped" >> $GITHUB_STEP_SUMMARY
           else
             echo "## ℹ️ No changes" >> $GITHUB_STEP_SUMMARY
           fi
           date -u >> $GITHUB_STEP_SUMMARY
+
+  update-cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event_name == 'schedule'
+    # Only run on Monday (cron day-of-week = 1)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check if Monday
+        id: is_monday
+        run: |
+          DOW=$(date -u +%u)
+          if [ "$DOW" = "1" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Fetch HearthstoneJSON card data
+        if: steps.is_monday.outputs.run == 'true'
+        run: |
+          curl -sL "https://api.hearthstonejson.com/v1/latest/enUS/cards.json" \
+            -o src/data/generated/cards-full.json
+          COUNT=$(node -e "const d=require('./src/data/generated/cards-full.json'); console.log(d.length)")
+          echo "Cards: $COUNT"
+
+      - name: Check for changes
+        if: steps.is_monday.outputs.run == 'true'
+        id: check
+        run: |
+          if git diff --quiet src/data/generated/cards-full.json; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push
+        if: steps.check.outputs.has_changes == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/generated/cards-full.json
+          NOW=$(date -u '+%Y-%m-%d')
+          git commit -m "chore: update card data (${NOW})"
+          git push

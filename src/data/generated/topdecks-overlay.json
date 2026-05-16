@@ -1,0 +1,247 @@
+{
+  "lastFetch": "2026-05-16T10:05:14.304Z",
+  "source": "hearthstonetopdecks",
+  "fetchSuccess": true,
+  "tierListCount": 38,
+  "featuredDeckCount": 5,
+  "deckCodeCount": 5,
+  "archetypes": {
+    "deck-dh-broxigar": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEMONHUNTER",
+      "archetypeName": "Deathrattle Broxigar Demon Hunter"
+    },
+    "deck-paladin-aura": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "PALADIN",
+      "archetypeName": "Aura Paladin",
+      "deckCode": "AAECAZ8FDsmgBMekBs2pBrHBBuHrBvD+BsODB4KYB+6oB++oB/CoB52pB+usB4qxBwiV9QXOqQbRqQbI/wa6lgfLqQfErge+sgcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "dustCost": null,
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/aura-paladin-early-2-legend-boringpriesttt-across-the-timeways/",
+      "rank": 2,
+      "player": "BoringPriesttt"
+    },
+    "deck-dk-corpse": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEATHKNIGHT",
+      "archetypeName": "Corpse Death Knight",
+      "deckCode": "AAECAYjaBQrHpAaouAbC6Aaq6gbO8Qap9QaSgwfDgweCmAftnwcKmIEF/7oGoOIG3esGtfoGl4IHupUH0JsHh5wH4rEHAAED6N4Gx6QG9bMGx6QG97MGx6QGAAA=",
+      "dustCost": null,
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/unholy-blood-corpse-death-knight-early-2-legend-%eb%9f%ac%eb%b8%94%eb%a6%ac%ec%a6%88%ed%99%94%ec%9d%b4%ed%8c%85-across-the-timeways/",
+      "rank": 2,
+      "player": "러블리즈화이팅"
+    },
+    "deck-dh-cliff-dive": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEMONHUNTER",
+      "archetypeName": "Cliff Dive Demon Hunter"
+    },
+    "deck-warrior-dragon": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "WARRIOR",
+      "archetypeName": "Dragon Warrior"
+    },
+    "deck-shaman-midrange": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "SHAMAN",
+      "archetypeName": "Midrange Shaman"
+    },
+    "deck-dh-aggro": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEMONHUNTER",
+      "archetypeName": "Aggro Demon Hunter"
+    },
+    "deck-dk-leech": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEATHKNIGHT",
+      "archetypeName": "Leech Death Knight"
+    },
+    "deck-dh-broxigar-cycle": {
+      "tier": 1,
+      "tierName": "Best Decks",
+      "cardClass": "DEMONHUNTER",
+      "archetypeName": "Cycle Broxigar Demon Hunter"
+    },
+    "deck-druid-owlonius": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "DRUID",
+      "archetypeName": "Owlonius Location Druid"
+    },
+    "deck-warrior-quest-control": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "WARRIOR",
+      "archetypeName": "Quest Control Warrior"
+    },
+    "deck-hunter-discover": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "HUNTER",
+      "archetypeName": "Discover Hunter"
+    },
+    "deck-rogue-ashamane": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "ROGUE",
+      "archetypeName": "Ashamane Rogue"
+    },
+    "deck-paladin-aggro": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "PALADIN",
+      "archetypeName": "Aggro Paladin"
+    },
+    "deck-dh-no-minion": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "DEMONHUNTER",
+      "archetypeName": "No Minion Demon Hunter",
+      "deckCode": "AAECAea5AwSKqgeSqgeTqgensQcN4fgFw7AG9sAG4+MGvuoG3v8GqocHtpcHtZgHnrEHobEHv7EH6LEHAAA=",
+      "dustCost": null,
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/no-minion-demon-hunter-early-16-legend-destruct-across-the-timeways/",
+      "rank": 16,
+      "player": "Destruct"
+    },
+    "deck-mage-protoss": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "MAGE",
+      "archetypeName": "Protoss Mage"
+    },
+    "deck-dk-aggro-corpse": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "DEATHKNIGHT",
+      "archetypeName": "Aggro Corpse Death Knight"
+    },
+    "deck-warlock-egg": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "WARLOCK",
+      "archetypeName": "Egg Warlock"
+    },
+    "deck-rogue-protoss": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "ROGUE",
+      "archetypeName": "Protoss Rogue"
+    },
+    "deck-mage-elemental": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "MAGE",
+      "archetypeName": "Elemental Mage"
+    },
+    "deck-priest-protoss": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "PRIEST",
+      "archetypeName": "Protoss Priest"
+    },
+    "deck-rogue-cycle": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "ROGUE",
+      "archetypeName": "Cycle Rogue"
+    },
+    "deck-rogue-imbue": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "ROGUE",
+      "archetypeName": "Imbue Rogue",
+      "deckCode": "AAECAaIHDMekBozWBpfXBuHrBvKDB4OKB4KYB5ObB9GdB4ytB92vB7qzBwn2nwT3nwS2tQbq5Qb3gQeQgwfHrgfZrweaswcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "dustCost": null,
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/imbue-rogue-142-legend-unknown-across-the-timeways/",
+      "rank": 142,
+      "player": "Unknown"
+    },
+    "deck-hunter-face": {
+      "tier": 2,
+      "tierName": "Great Decks",
+      "cardClass": "HUNTER",
+      "archetypeName": "Face Hunter"
+    },
+    "deck-dk-stegodon": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "DEATHKNIGHT",
+      "archetypeName": "Stegodon Death Knight"
+    },
+    "deck-dk-deathrattle": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "DEATHKNIGHT",
+      "archetypeName": "Deathrattle Death Knight"
+    },
+    "deck-mage-quest": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "MAGE",
+      "archetypeName": "Quest Spell Mage"
+    },
+    "deck-mage-arcane": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "MAGE",
+      "archetypeName": "Arcane Mage"
+    },
+    "deck-druid-aviana": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "DRUID",
+      "archetypeName": "Aviana Druid"
+    },
+    "deck-warlock-rafaam": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "WARLOCK",
+      "archetypeName": "Rafaam Warlock"
+    },
+    "deck-rogue-quasar": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "ROGUE",
+      "archetypeName": "Quasar Rogue"
+    },
+    "deck-mage-toki": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "MAGE",
+      "archetypeName": "Toki Mage"
+    },
+    "deck-priest-control": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "PRIEST",
+      "archetypeName": "Aviana Control Priest"
+    },
+    "deck-shaman-spell-damage": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "SHAMAN",
+      "archetypeName": "Spell Damage Overload Shaman"
+    },
+    "deck-warrior-quest": {
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "cardClass": "WARRIOR",
+      "archetypeName": "Quest Warrior"
+    },
+    "deck-mage-arkwing-quest": {
+      "deckCode": "AAECAf0ECMekBpXqBqrqBvKDB4KYB6ebB9WdB/KyBwuFvwbx5Qby5QaG5gaa9Aa1+gbxkQewmwf6mwf2pwfLtgcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "dustCost": null,
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/arkwing-quest-mage-38-legend-barrette-across-the-timeways/",
+      "rank": 38,
+      "player": "Barrette"
+    }
+  }
+}
