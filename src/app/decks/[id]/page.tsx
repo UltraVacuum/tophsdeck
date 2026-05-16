@@ -12,7 +12,6 @@ import { FavoriteButton } from "@/components/decks/favorite-button";
 import { ALL_CARDS, type RealCard } from "@/data/real-cards";
 import { HS_CLASSES, CLASS_COLORS, CLASS_ZH } from "@/data/classes";
 import { DeckCardEntry } from "@/types";
-import { CardImage } from "@/components/cards/card-image";
 import {
   ArrowLeft, TrendingUp, Users, Zap, Gem, Gauge, Gamepad2,
   BookOpen, Swords, Target, Lightbulb, Coins, ChevronRight,
@@ -325,48 +324,56 @@ export default async function DeckDetailPage({ params }: { params: Promise<{ id:
             </>
           )}
 
-          {/* Card List */}
+          {/* Card List — game-style tile bars */}
           <Card className="border-border/30">
             <CardHeader className="pb-3">
               <CardTitle className="text-base flex items-center gap-2">
                 <Shield className="h-4 w-4 text-blue-400" /> 卡牌列表 ({totalCards})
               </CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="space-y-1">
               {sortedCosts.map(cost => (
-                <div key={cost} className="mb-4">
-                  <div className="text-xs font-medium text-muted-foreground mb-2">
-                    {cost} 费 ({grouped.get(cost)!.reduce((s, e) => s + e.quantity, 0)} 张)
+                <div key={cost}>
+                  <div className="text-[10px] font-medium text-muted-foreground mb-1 px-1">
+                    {cost} 费 · {grouped.get(cost)!.reduce((s, e) => s + e.quantity, 0)} 张
                   </div>
-                  <div className="space-y-1">
-                    {grouped.get(cost)!.map(({ card, quantity }) => (
-                      <Link key={card.id} href={`/cards/${card.id}`}>
-                        <div className="flex items-center gap-2 rounded-md px-2 py-1.5 text-sm hover:bg-accent/50 transition-colors group">
-                          <div className="flex h-6 w-6 items-center justify-center rounded text-xs font-bold text-white"
-                            style={{ backgroundColor: classColor }}>{card.cost}</div>
-                          <CardImage
-                            cardId={card.id}
-                            nameZh={card.nameZh}
-                            rarity={card.rarity}
-                            cardClass={card.cardClass}
-                            size="tile"
-                            className="opacity-60 group-hover:opacity-100 transition-opacity"
-                          />
-                          <span className="flex-1 truncate">{card.nameZh}</span>
-                          <span className="text-xs text-muted-foreground">
-                            {card.attack != null ? `${card.attack}/${card.health}` : card.type}
-                          </span>
-                          <Badge variant="outline" className="text-[10px]"
-                            style={card.cardClass !== "NEUTRAL"
-                              ? { color: classColor, borderColor: `${classColor}44` }
-                              : { color: "#888" }}>
-                            {card.cardClass === "NEUTRAL" ? "中立" : classInfo.nameZh}
-                          </Badge>
-                          {quantity === 2 && <Badge variant="secondary" className="text-[10px]">×2</Badge>}
-                          {card.rarity === "LEGENDARY" && <span className="text-orange-400 text-xs">★</span>}
-                        </div>
-                      </Link>
-                    ))}
+                  <div className="space-y-0.5 mb-2">
+                    {grouped.get(cost)!.map(({ card, quantity }) => {
+                      const tileUrl = `https://art.hearthstonejson.com/v1/tiles/${card.id}.png`;
+                      return (
+                        <Link key={card.id} href={`/cards/${card.id}`}>
+                          <div className="group relative flex items-center rounded overflow-hidden h-9.75 hover:ring-1 hover:ring-primary/40 transition-all">
+                            {/* Tile background image */}
+                            <img
+                              src={tileUrl}
+                              alt=""
+                              className="absolute inset-0 w-full h-full object-cover object-left"
+                              loading="lazy"
+                            />
+                            {/* Dark overlay for readability */}
+                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                            {/* Left: mana cost */}
+                            <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold text-white bg-blue-600/90 ml-1.5 shrink-0 shadow-sm">
+                              {card.cost}
+                            </div>
+                            {/* Right: quantity + stats */}
+                            <div className="relative z-10 ml-auto flex items-center gap-1.5 mr-2 shrink-0">
+                              {card.attack != null && (
+                                <span className="text-[10px] text-white/70 tabular-nums">
+                                  {card.attack}/{card.health}
+                                </span>
+                              )}
+                              {card.rarity === "LEGENDARY" && (
+                                <span className="text-[10px] text-orange-300">★</span>
+                              )}
+                              {quantity === 2 && (
+                                <span className="text-[11px] font-bold text-white/90 bg-black/30 rounded px-1.5">×2</span>
+                              )}
+                            </div>
+                          </div>
+                        </Link>
+                      );
+                    })}
                   </div>
                 </div>
               ))}

@@ -25,7 +25,7 @@ interface CardImageProps {
 }
 
 const SIZE_CLASSES: Record<CardImageSize, string> = {
-  tile: "w-10 h-14",
+  tile: "w-[256px] h-[59px]",
   thumb: "w-14 h-20",
   normal: "w-full aspect-[3/4]",
   large: "w-full aspect-[3/4]",
@@ -48,9 +48,12 @@ export function CardImage({
   const classColor = cardClass ? CLASS_COLORS[cardClass] : "#888";
 
   const isLarge = size === "normal" || size === "large";
-  const imageUrl = isLarge
-    ? `https://art.hearthstonejson.com/v1/512x/${cardId}.jpg`
-    : `https://art.hearthstonejson.com/v1/256x/${cardId}.jpg`;
+  const isTile = size === "tile";
+  const imageUrl = isTile
+    ? `https://art.hearthstonejson.com/v1/tiles/${cardId}.png`
+    : isLarge
+      ? `https://art.hearthstonejson.com/v1/512x/${cardId}.jpg`
+      : `https://art.hearthstonejson.com/v1/256x/${cardId}.jpg`;
 
   if (error) {
     return (
