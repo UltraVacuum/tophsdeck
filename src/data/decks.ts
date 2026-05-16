@@ -76,6 +76,38 @@ export const DECKS: Deck[] = (rawData as Deck[]).map((deck) => {
   return merged;
 });
 
+// Add topdecks-only archetypes that don't exist in base data
+const baseIds = new Set((rawData as Deck[]).map(d => d.id));
+const today = new Date().toISOString().slice(0, 10);
+
+for (const [id, td] of Object.entries(topdecks.archetypes)) {
+  if (baseIds.has(id)) continue;
+
+  const cards = td.cards?.map(c => ({ cardId: c.cardId || String(c.dbfId), quantity: c.quantity })) || [];
+
+  DECKS.push({
+    id,
+    name: td.archetypeName || id.replace(/deck-|-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+    cardClass: (td.cardClass as Deck["cardClass"]) || "WARRIOR",
+    format: "standard",
+    archetype: td.tierName || "Meta",
+    cards,
+    deckCode: td.deckCode,
+    dustCost: td.dustCost ?? undefined,
+    tier: td.tier,
+    winRate: undefined,
+    gamesPlayed: undefined,
+    difficulty: td.tier === 1 ? 3 : td.tier === 2 ? 2 : 1,
+    playStyle: td.tierName === "Best Decks" ? "主流" : td.tierName === "Great Decks" ? "强力" : "趣味",
+    dateCreated: today,
+    dateUpdated: today,
+    lastUpdated: topdecks.lastFetch,
+    decodedCards: td.cards?.length ? td.cards : undefined,
+    source: "hearthstonetopdecks",
+    tags: [td.tierName || "Meta", td.cardClass || ""].filter(Boolean),
+  });
+}
+
 export function getDeckById(id: string): Deck | undefined {
   return DECKS.find((d) => d.id === id);
 }
