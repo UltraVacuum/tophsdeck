@@ -1,5 +1,5 @@
 {
-  "lastFetch": "2026-05-17T04:37:33.127Z",
+  "lastFetch": "2026-05-17T14:03:13.036Z",
   "source": "hearthstonetopdecks",
   "fetchSuccess": true,
   "tierListCount": 33,
@@ -1849,8 +1849,6 @@
       "deckCode": "AAECAea5AwSKqgeSqgeTqgensQcN4fgFw7AG9sAG4+MGvuoG3v8GqocHtpcHtZgHnrEHobEHv7EH6LEHAAA=",
       "dustCost": null,
       "sourceUrl": "https://www.hearthstonetopdecks.com/decks/no-minion-demon-hunter-early-16-legend-destruct-across-the-timeways/",
-      "rank": 16,
-      "player": "Destruct",
       "cards": [
         {
           "dbfId": 120074,
