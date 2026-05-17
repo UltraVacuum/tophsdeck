@@ -58,9 +58,14 @@ async function main() {
   const enMap = new Map(enCards.map(c => [c.id, c]));
   
   // Filter collectible playable cards (includes HERO cards like Deathstalker Rexxar)
+  const VALID_CLASSES = new Set([
+    'DEMONHUNTER', 'DEATHKNIGHT', 'DRUID', 'HUNTER', 'MAGE',
+    'PALADIN', 'PRIEST', 'ROGUE', 'SHAMAN', 'WARLOCK', 'WARRIOR', 'NEUTRAL',
+  ]);
   const collectible = zhCards.filter(c =>
     c.collectible === true &&
-    ['MINION','SPELL','WEAPON','LOCATION','HERO'].includes(c.type)
+    ['MINION','SPELL','WEAPON','LOCATION','HERO'].includes(c.type) &&
+    VALID_CLASSES.has(c.cardClass)
   );
   console.log(`Collectible: ${collectible.length}`);
   

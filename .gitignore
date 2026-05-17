@@ -44,3 +44,8 @@ public/images/cards/
 .claude/
 .next/
 .worktrees/
+
+# Generated deck data (rebuilt by CI)
+src/data/generated/decks/
+design/
+docs/

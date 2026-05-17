@@ -1,0 +1,3144 @@
+{
+  "lastMerge": "2026-05-16T16:11:33.829Z",
+  "latestSnapshot": "2026-05-16",
+  "snapshotCount": 1,
+  "totalArchetypes": 22,
+  "totalDeckCodes": 17,
+  "archetypes": {
+    "deck-dh-peddler": {
+      "archetypeName": "Peddler Demon Hunter",
+      "cardClass": "DEMONHUNTER",
+      "tier": 1,
+      "tierName": "Best Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/peddler-demon-hunter-1-legend-asuna-across-the-timeways/",
+      "player": "Asuna",
+      "rank": 1,
+      "dustCost": 17560,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 106618,
+          "name": "Climbing Hook",
+          "cardId": "VAC_932",
+          "quantity": 1
+        },
+        {
+          "dbfId": 106620,
+          "name": "Patches the Pilot",
+          "cardId": "VAC_933",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112846,
+          "name": "Kerrigan, Queen of Blades",
+          "cardId": "SC_004",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113321,
+          "name": "Ysera, Emerald Aspect",
+          "cardId": "EDR_000",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114498,
+          "name": "Ferocious Felbat",
+          "cardId": "EDR_892",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114513,
+          "name": "Infiltrate",
+          "cardId": "GDB_902",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115139,
+          "name": "Nightmare Lord Xavius",
+          "cardId": "EDR_856",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120074,
+          "name": "Broxigar",
+          "cardId": "TIME_020",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120082,
+          "name": "Axe of Cenarius",
+          "cardId": "TIME_020t1",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120083,
+          "name": "First Portal to Argus",
+          "cardId": "TIME_020t2",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120570,
+          "name": "Zai, the Incredible",
+          "cardId": "CORE_DMF_231",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120985,
+          "name": "Chrono-Lord Deios",
+          "cardId": "TIME_064",
+          "quantity": 1
+        },
+        {
+          "dbfId": 104652,
+          "name": "Window Shopper",
+          "cardId": "TOY_652",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105514,
+          "name": "Return Policy",
+          "cardId": "MIS_102",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106614,
+          "name": "Dangerous Cliffside",
+          "cardId": "VAC_929",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110768,
+          "name": "Spirit Peddler",
+          "cardId": "WORK_015",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114654,
+          "name": "Grim Harvest",
+          "cardId": "EDR_840",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115198,
+          "name": "Wyvern's Slumber",
+          "cardId": "EDR_820",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117686,
+          "name": "Infestation",
+          "cardId": "TLC_902",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121058,
+          "name": "Remnant of Rage",
+          "cardId": "END_004",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAea5Aw7HpAb6wAb8wAbO8Qap9QbC/gbR/gbDgweCmAeKqgeSqgeTqgf6rQeZsQcIzLEGqrgG9sAGsOEG3v8G/oMHtpcH4rEHAAED6N4Gx6QG9bMGx6QG97MGx6QGAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-hunter-discover": {
+      "archetypeName": "Discover Hunter",
+      "cardClass": "HUNTER",
+      "tier": 1,
+      "tierName": "Best Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/discover-hunter-1-legend-savor-across-the-timeways-2/",
+      "player": "SAVOR",
+      "rank": 1,
+      "dustCost": 11320,
+      "cards": [
+        {
+          "dbfId": 108967,
+          "name": "Griftah, Trusted Vendor",
+          "cardId": "VAC_959",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111068,
+          "name": "Parallax Cannon",
+          "cardId": "GDB_843",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111074,
+          "name": "Exarch Naielle",
+          "cardId": "GDB_846",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115139,
+          "name": "Nightmare Lord Xavius",
+          "cardId": "EDR_856",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119705,
+          "name": "Ranger Captain Alleria",
+          "cardId": "TIME_609t1",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119706,
+          "name": "Ranger Initiate Vereesa",
+          "cardId": "TIME_609t2",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119707,
+          "name": "Ranger General Sylvanas",
+          "cardId": "TIME_609",
+          "quantity": 1
+        },
+        {
+          "dbfId": 121029,
+          "name": "Niri of the Crater",
+          "cardId": "TLC_836",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69545,
+          "name": "Tracking",
+          "cardId": "CORE_DS1_184",
+          "quantity": 2
+        },
+        {
+          "dbfId": 69546,
+          "name": "Arcane Shot",
+          "cardId": "CORE_DS1_185",
+          "quantity": 2
+        },
+        {
+          "dbfId": 69660,
+          "name": "Youthful Brewmaster",
+          "cardId": "CORE_EX1_049",
+          "quantity": 2
+        },
+        {
+          "dbfId": 102227,
+          "name": "Glacial Shard",
+          "cardId": "CORE_UNG_205",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106306,
+          "name": "Tidepool Pupil",
+          "cardId": "VAC_304",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106374,
+          "name": "Mixologist",
+          "cardId": "VAC_523",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106574,
+          "name": "Birdwatching",
+          "cardId": "VAC_408",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106576,
+          "name": "Parrot Sanctuary",
+          "cardId": "VAC_409",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110869,
+          "name": "Rangari Scout",
+          "cardId": "GDB_841",
+          "quantity": 2
+        },
+        {
+          "dbfId": 112045,
+          "name": "Alien Encounters",
+          "cardId": "GDB_237",
+          "quantity": 2
+        },
+        {
+          "dbfId": 119696,
+          "name": "Precise Shot",
+          "cardId": "TIME_600",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAR8Ip9MG3OMG4uMGw4MHmacHmqcHm6cHxbEHC6mfBKqfBJygBNOeBsK+Boa/Bs7ABtDABpXiBq3rBpCnBwAA",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-druid-owlonius": {
+      "archetypeName": "Owlonius Druid",
+      "cardClass": "DRUID",
+      "tier": 1,
+      "tierName": "Best Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/owlonius-druid-early-1-legend-rocky-across-the-timeways/",
+      "player": "Rocky",
+      "rank": 1,
+      "dustCost": 13360,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 104619,
+          "name": "Owlonius",
+          "cardId": "TOY_807",
+          "quantity": 1
+        },
+        {
+          "dbfId": 105813,
+          "name": "Sleep Under the Stars",
+          "cardId": "VAC_907",
+          "quantity": 1
+        },
+        {
+          "dbfId": 105893,
+          "name": "Mistah Vistah",
+          "cardId": "VAC_519",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112097,
+          "name": "Gnomelia, S.A.F.E. Pilot",
+          "cardId": "CORE_TOY_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115631,
+          "name": "Amirdrassil",
+          "cardId": "FIR_907",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119928,
+          "name": "Lady Azshara",
+          "cardId": "TIME_211",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119929,
+          "name": "The Well of Eternity",
+          "cardId": "TIME_211t1",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119930,
+          "name": "Zin-Azshari",
+          "cardId": "TIME_211t2",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69550,
+          "name": "Innervate",
+          "cardId": "CORE_EX1_169",
+          "quantity": 2
+        },
+        {
+          "dbfId": 76289,
+          "name": "Living Roots",
+          "cardId": "CORE_AT_037",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106369,
+          "name": "Seabreeze Chalice",
+          "cardId": "VAC_520",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106385,
+          "name": "Scrapbooking Student",
+          "cardId": "VAC_529",
+          "quantity": 2
+        },
+        {
+          "dbfId": 107891,
+          "name": "New Heights",
+          "cardId": "VAC_949",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110893,
+          "name": "Arkonite Revelation",
+          "cardId": "GDB_852",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117648,
+          "name": "Story of Barnabus",
+          "cardId": "TLC_231",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120746,
+          "name": "Waveshaping",
+          "cardId": "TIME_701",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121064,
+          "name": "Press the Advantage",
+          "cardId": "END_007",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121150,
+          "name": "Acceleration Aura",
+          "cardId": "END_011",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAZICCsekBquxBtW6BqW7BuHrBq+HB4KYB/ioB/moB/qoBwqunwSB1ASBvwaRvwbzygat4gaQlweqrwfosQe+sgcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dh-aggro": {
+      "archetypeName": "Aggro Demon Hunter",
+      "cardClass": "DEMONHUNTER",
+      "tier": 1,
+      "tierName": "Best Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/aggro-demon-hunter-early-1-legend-devou-across-the-timeways/",
+      "player": "Devou",
+      "rank": 1,
+      "dustCost": 12540,
+      "cards": [
+        {
+          "dbfId": 69655,
+          "name": "Bloodmage Thalnos",
+          "cardId": "CORE_EX1_012",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102184,
+          "name": "Kayn Sunfury",
+          "cardId": "CORE_BT_187",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 105540,
+          "name": "Aranna, Thrill Seeker",
+          "cardId": "VAC_501",
+          "quantity": 1
+        },
+        {
+          "dbfId": 110796,
+          "name": "Dreamplanner Zephrys",
+          "cardId": "WORK_027",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117813,
+          "name": "Insect Claw",
+          "cardId": "TLC_833",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120993,
+          "name": "Time-Lost Glaive",
+          "cardId": "TIME_444",
+          "quantity": 1
+        },
+        {
+          "dbfId": 121063,
+          "name": "Chronikar",
+          "cardId": "END_006",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102381,
+          "name": "Spirit of the Team",
+          "cardId": "TOY_028",
+          "quantity": 2
+        },
+        {
+          "dbfId": 104515,
+          "name": "Red Card",
+          "cardId": "TOY_644",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105559,
+          "name": "Sock Puppet Slitherspear",
+          "cardId": "MIS_710",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106614,
+          "name": "Dangerous Cliffside",
+          "cardId": "VAC_929",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106640,
+          "name": "Hot Coals",
+          "cardId": "VAC_414",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106709,
+          "name": "Acupuncture",
+          "cardId": "VAC_419",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114344,
+          "name": "Slumbering Sprite",
+          "cardId": "EDR_469",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114654,
+          "name": "Grim Harvest",
+          "cardId": "EDR_840",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115655,
+          "name": "Living Flame",
+          "cardId": "FIR_929",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117686,
+          "name": "Infestation",
+          "cardId": "TLC_902",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120181,
+          "name": "Perennial Serpent",
+          "cardId": "TIME_022",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAea5AwiXoASongbHpAbEuAbM4Qa1mAehsQfnsQcL7Z8Gw7AG17gG9sAGkMEG1cEGqP0G3v8Gx4cHtpcH9aoHAAED6N4Gx6QG8bMGx6QG8rMGx6QGAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-mage-arkwing": {
+      "archetypeName": "Arkwing Mage",
+      "cardClass": "MAGE",
+      "tier": 2,
+      "tierName": "Great Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/arkwing-mage-early-6-legend-king-across-the-timeways/",
+      "player": "King",
+      "rank": 6,
+      "dustCost": 5440,
+      "cards": [
+        {
+          "dbfId": 69501,
+          "name": "Fireball",
+          "cardId": "CORE_CS2_029",
+          "quantity": 1
+        },
+        {
+          "dbfId": 110965,
+          "name": "Portalmancer Skyla",
+          "cardId": "WORK_063",
+          "quantity": 1
+        },
+        {
+          "dbfId": 103350,
+          "name": "Watercolor Artist",
+          "cardId": "TOY_376",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106369,
+          "name": "Seabreeze Chalice",
+          "cardId": "VAC_520",
+          "quantity": 2
+        },
+        {
+          "dbfId": 107753,
+          "name": "Metal Detector",
+          "cardId": "VAC_330",
+          "quantity": 2
+        },
+        {
+          "dbfId": 107763,
+          "name": "Petty Theft",
+          "cardId": "VAC_335",
+          "quantity": 2
+        },
+        {
+          "dbfId": 109324,
+          "name": "Oh, Manager!",
+          "cardId": "VAC_460",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111313,
+          "name": "Troubled Mechanic",
+          "cardId": "GDB_463",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111345,
+          "name": "Arkwing Pilot",
+          "cardId": "GDB_134",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111346,
+          "name": "Ingenious Artificer",
+          "cardId": "GDB_135",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111365,
+          "name": "Frostbolt",
+          "cardId": "CORE_CS2_024",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111366,
+          "name": "Primordial Glyph",
+          "cardId": "CORE_UNG_941",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113111,
+          "name": "Vicious Slitherspear",
+          "cardId": "CORE_TSC_827",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115635,
+          "name": "Smoldering Grove",
+          "cardId": "FIR_911",
+          "quantity": 2
+        },
+        {
+          "dbfId": 116980,
+          "name": "Stellar Balance",
+          "cardId": "EDR_874",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120971,
+          "name": "Violet Spellwing",
+          "cardId": "CORE_DRG_107",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAf0EAv2eBPXiBg62pwaBvwbpyQbzyQaM1gbR5Qbx5Qby5QaF5gaG5gbX8wazhwf0kQeLsQcAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-rogue-tess": {
+      "archetypeName": "Tess Rogue",
+      "cardClass": "ROGUE",
+      "tier": 2,
+      "tierName": "Great Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/tess-rogue-7-legend-bunnyhoppor-across-the-timeways/",
+      "player": "Bunnyhoppor",
+      "rank": 7,
+      "dustCost": 17460,
+      "cards": [
+        {
+          "dbfId": 86539,
+          "name": "Tess Greymane",
+          "cardId": "CORE_GIL_598",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 107764,
+          "name": "Maestra, Mask Merchant",
+          "cardId": "VAC_336",
+          "quantity": 1
+        },
+        {
+          "dbfId": 107923,
+          "name": "\"Health\" Drink",
+          "cardId": "VAC_951",
+          "quantity": 1
+        },
+        {
+          "dbfId": 109463,
+          "name": "Treasure Hunter Eudora",
+          "cardId": "VAC_464",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111925,
+          "name": "Talgath",
+          "cardId": "GDB_472",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118481,
+          "name": "Mirrex, the Crystalline",
+          "cardId": "DINO_407",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119532,
+          "name": "Opu the Unseen",
+          "cardId": "TLC_522",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120460,
+          "name": "Foxy Fraud",
+          "cardId": "CORE_DMF_511",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69622,
+          "name": "Shadowstep",
+          "cardId": "CORE_EX1_144",
+          "quantity": 2
+        },
+        {
+          "dbfId": 69623,
+          "name": "Preparation",
+          "cardId": "CORE_EX1_145",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105142,
+          "name": "Dubious Purchase",
+          "cardId": "MIS_903",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106681,
+          "name": "Snatch and Grab",
+          "cardId": "VAC_700",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110754,
+          "name": "Agency Espionage",
+          "cardId": "WORK_004",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111338,
+          "name": "Spacerock Collector",
+          "cardId": "GDB_875",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115088,
+          "name": "Nightmare Fuel",
+          "cardId": "EDR_528",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120647,
+          "name": "Deja Vu",
+          "cardId": "TIME_039",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120793,
+          "name": "Flashback",
+          "cardId": "TIME_711",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAaIHDIukBcekBvTJBpPLBpfXBqrqBrXqBoOKB4KYB9GdB+ylB4ytBwn2nwT3nwS2tQa5wQai4Qbq5QaQgwfHrgfZrwcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-warrior-quest-control": {
+      "archetypeName": "Quest Control Warrior",
+      "cardClass": "WARRIOR",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/quest-control-warrior-21-legend-thijs-across-the-timeways/",
+      "player": "Thijs",
+      "rank": 21,
+      "dustCost": 16980,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 105813,
+          "name": "Sleep Under the Stars",
+          "cardId": "VAC_907",
+          "quantity": 1
+        },
+        {
+          "dbfId": 106382,
+          "name": "All You Can Eat",
+          "cardId": "VAC_528",
+          "quantity": 1
+        },
+        {
+          "dbfId": 107770,
+          "name": "Hamm, the Hungry",
+          "cardId": "VAC_340",
+          "quantity": 1
+        },
+        {
+          "dbfId": 107892,
+          "name": "Bouldering Buddy",
+          "cardId": "VAC_950",
+          "quantity": 1
+        },
+        {
+          "dbfId": 110882,
+          "name": "Un'Goro Brochure",
+          "cardId": "WORK_050",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 116718,
+          "name": "Bulwark of Azzinoth",
+          "cardId": "CORE_BT_781",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117302,
+          "name": "Ancient of Yore",
+          "cardId": "EDR_979",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117716,
+          "name": "Enter the Lost City",
+          "cardId": "TLC_602",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117723,
+          "name": "Bob the Bartender",
+          "cardId": "BG31_BOB",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120266,
+          "name": "Murozond, Unbounded",
+          "cardId": "TIME_024",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69640,
+          "name": "Brawl",
+          "cardId": "CORE_EX1_407",
+          "quantity": 2
+        },
+        {
+          "dbfId": 69641,
+          "name": "Shield Slam",
+          "cardId": "CORE_EX1_410",
+          "quantity": 2
+        },
+        {
+          "dbfId": 76302,
+          "name": "Shield Block",
+          "cardId": "CORE_EX1_606",
+          "quantity": 2
+        },
+        {
+          "dbfId": 102407,
+          "name": "Safety Goggles",
+          "cardId": "TOY_907",
+          "quantity": 2
+        },
+        {
+          "dbfId": 107891,
+          "name": "New Heights",
+          "cardId": "VAC_949",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110896,
+          "name": "Hostile Invader",
+          "cardId": "GDB_226",
+          "quantity": 2
+        },
+        {
+          "dbfId": 119786,
+          "name": "Unleash the Crocolisks",
+          "cardId": "TIME_873",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120828,
+          "name": "For Glory!",
+          "cardId": "TIME_715",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAQcOx6QG1boGjr8G+skG9MoGouIGquoGg4oH7o8HtpQH1JcH25cHgpgHyqsHCIigBImgBI7UBIegBvPKBrDiBuqnB/yvBwABA+jeBsekBvWzBsekBvezBsekBgAA",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dk-blood-control": {
+      "archetypeName": "Blood Control Death Knight",
+      "cardClass": "DEATHKNIGHT",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/blood-control-death-knight-23-legend-%ec%9e%84%eb%82%98%ec%b0%b8-across-the-timeways/",
+      "player": "임나참",
+      "rank": 23,
+      "dustCost": 15840,
+      "cards": [
+        {
+          "dbfId": 80647,
+          "name": "Chillfallen Baron",
+          "cardId": "RLK_708",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102221,
+          "name": "Rustrot Viper",
+          "cardId": "CORE_SW_072",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102225,
+          "name": "Dirty Rat",
+          "cardId": "CORE_CFM_790",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111334,
+          "name": "Corpse Explosion",
+          "cardId": "CORE_RLK_035",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111969,
+          "name": "Orbital Moon",
+          "cardId": "GDB_475",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112097,
+          "name": "Gnomelia, S.A.F.E. Pilot",
+          "cardId": "CORE_TOY_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112361,
+          "name": "Kil'jaeden",
+          "cardId": "GDB_145",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112846,
+          "name": "Kerrigan, Queen of Blades",
+          "cardId": "SC_004",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114301,
+          "name": "Hideous Husk",
+          "cardId": "EDR_810",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115139,
+          "name": "Nightmare Lord Xavius",
+          "cardId": "EDR_856",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118163,
+          "name": "Steamcleaner",
+          "cardId": "CORE_REV_946",
+          "quantity": 1
+        },
+        {
+          "dbfId": 121000,
+          "name": "Husk, Eternal Reaper",
+          "cardId": "TIME_618",
+          "quantity": 1
+        },
+        {
+          "dbfId": 104635,
+          "name": "Threads of Despair",
+          "cardId": "TOY_826",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105855,
+          "name": "Dreadhound Handler",
+          "cardId": "VAC_514",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111327,
+          "name": "Vampiric Blood",
+          "cardId": "CORE_RLK_051",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113973,
+          "name": "Creature of Madness",
+          "cardId": "EDR_105",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117434,
+          "name": "Reanimated Pterrordax",
+          "cardId": "TLC_436",
+          "quantity": 2
+        },
+        {
+          "dbfId": 118279,
+          "name": "Blob of Tar",
+          "cardId": "TLC_468",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121058,
+          "name": "Remnant of Rage",
+          "cardId": "END_004",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAYjaBRCH9gTNngbRngbHpAbm5Qaq6gbh6gbh6wbp7QbO8Qb9/AbDgweDigeCmAeTmweosQcHu7EG/7oG3+UGtfoGupUHh5wH4rEHAAED6N4Gx6QG9bMGx6QG97MGx6QGAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-hunter-discover-briarspawn": {
+      "archetypeName": "Briarspawn Discover Hunter",
+      "cardClass": "HUNTER",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/briarspawn-discover-hunter-32-legend-%ec%9e%84%eb%82%98%ec%b0%b8-across-the-timeways/",
+      "player": "임나참",
+      "rank": 32,
+      "dustCost": 18280,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 108967,
+          "name": "Griftah, Trusted Vendor",
+          "cardId": "VAC_959",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111074,
+          "name": "Exarch Naielle",
+          "cardId": "GDB_846",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113321,
+          "name": "Ysera, Emerald Aspect",
+          "cardId": "EDR_000",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114213,
+          "name": "Briarspawn Drake",
+          "cardId": "EDR_453",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114849,
+          "name": "Naralex, Herald of the Flights",
+          "cardId": "EDR_844",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117723,
+          "name": "Bob the Bartender",
+          "cardId": "BG31_BOB",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119705,
+          "name": "Ranger Captain Alleria",
+          "cardId": "TIME_609t1",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119706,
+          "name": "Ranger Initiate Vereesa",
+          "cardId": "TIME_609t2",
+          "quantity": 1
+        },
+        {
+          "dbfId": 119707,
+          "name": "Ranger General Sylvanas",
+          "cardId": "TIME_609",
+          "quantity": 1
+        },
+        {
+          "dbfId": 121029,
+          "name": "Niri of the Crater",
+          "cardId": "TLC_836",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69545,
+          "name": "Tracking",
+          "cardId": "CORE_DS1_184",
+          "quantity": 2
+        },
+        {
+          "dbfId": 102227,
+          "name": "Glacial Shard",
+          "cardId": "CORE_UNG_205",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106306,
+          "name": "Tidepool Pupil",
+          "cardId": "VAC_304",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106374,
+          "name": "Mixologist",
+          "cardId": "VAC_523",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106574,
+          "name": "Birdwatching",
+          "cardId": "VAC_408",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106576,
+          "name": "Parrot Sanctuary",
+          "cardId": "VAC_409",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110869,
+          "name": "Rangari Scout",
+          "cardId": "GDB_841",
+          "quantity": 2
+        },
+        {
+          "dbfId": 112045,
+          "name": "Alien Encounters",
+          "cardId": "GDB_237",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAR8Ox6QGp9MG4uMGquoGqfUGpfwGoYEHg4oH25cHgpgHmacHmqcHm6cHxbEHCKmfBNOeBsK+Boa/Bs7ABtDABpXiBq3rBgABA+jeBsekBvWzBsekBvezBsekBgAA",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-rogue-protoss": {
+      "archetypeName": "Protoss Rogue",
+      "cardClass": "ROGUE",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/protoss-rogue-43-legend-unknown-across-the-timeways/",
+      "player": "Unknown",
+      "rank": 43,
+      "dustCost": 14760,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 106673,
+          "name": "Puppetmaster Dorian",
+          "cardId": "MIS_026",
+          "quantity": 1
+        },
+        {
+          "dbfId": 108967,
+          "name": "Griftah, Trusted Vendor",
+          "cardId": "VAC_959",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111925,
+          "name": "Talgath",
+          "cardId": "GDB_472",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113171,
+          "name": "Artanis",
+          "cardId": "SC_754",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118481,
+          "name": "Mirrex, the Crystalline",
+          "cardId": "DINO_407",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120985,
+          "name": "Chrono-Lord Deios",
+          "cardId": "TIME_064",
+          "quantity": 1
+        },
+        {
+          "dbfId": 69622,
+          "name": "Shadowstep",
+          "cardId": "CORE_EX1_144",
+          "quantity": 2
+        },
+        {
+          "dbfId": 69623,
+          "name": "Preparation",
+          "cardId": "CORE_EX1_145",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105142,
+          "name": "Dubious Purchase",
+          "cardId": "MIS_903",
+          "quantity": 2
+        },
+        {
+          "dbfId": 109324,
+          "name": "Oh, Manager!",
+          "cardId": "VAC_460",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111338,
+          "name": "Spacerock Collector",
+          "cardId": "GDB_875",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113165,
+          "name": "Dark Templar",
+          "cardId": "SC_752",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113168,
+          "name": "Photon Cannon",
+          "cardId": "SC_753",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113192,
+          "name": "Blink",
+          "cardId": "SC_761",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113739,
+          "name": "High Templar",
+          "cardId": "SC_765",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115088,
+          "name": "Nightmare Fuel",
+          "cardId": "EDR_528",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120647,
+          "name": "Deja Vu",
+          "cardId": "TIME_039",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAaIHCMekBrHBBqfTBrXqBpP0BoKYB9GdB5mxBwv2nwT3nwS2tQaM1gbq5QaN9AaQ9Aao9AbL+AaQgwfHrgcAAQPo3gbHpAb1swbHpAb3swbHpAYAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-paladin-umbra": {
+      "archetypeName": "Umbra Paladin",
+      "cardClass": "PALADIN",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/umbra-paladin-85-legend-unknown-across-the-timeways/",
+      "player": "Unknown",
+      "rank": 85,
+      "dustCost": 14820,
+      "cards": [
+        {
+          "dbfId": 106374,
+          "name": "Mixologist",
+          "cardId": "VAC_523",
+          "quantity": 1
+        },
+        {
+          "dbfId": 106673,
+          "name": "Puppetmaster Dorian",
+          "cardId": "MIS_026",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112097,
+          "name": "Gnomelia, S.A.F.E. Pilot",
+          "cardId": "CORE_TOY_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113321,
+          "name": "Ysera, Emerald Aspect",
+          "cardId": "EDR_000",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114868,
+          "name": "Ursol",
+          "cardId": "EDR_259",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117562,
+          "name": "Violet Treasuregill",
+          "cardId": "TLC_438",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117877,
+          "name": "Endbringer Umbra",
+          "cardId": "TLC_106",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120427,
+          "name": "Anachronos",
+          "cardId": "CORE_RLK_919",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120970,
+          "name": "Wisp",
+          "cardId": "CORE_CS2_231",
+          "quantity": 1
+        },
+        {
+          "dbfId": 120985,
+          "name": "Chrono-Lord Deios",
+          "cardId": "TIME_064",
+          "quantity": 1
+        },
+        {
+          "dbfId": 104519,
+          "name": "Messmaker",
+          "cardId": "TOY_646",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110573,
+          "name": "Interstellar Starslicer",
+          "cardId": "GDB_726",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110610,
+          "name": "Interstellar Researcher",
+          "cardId": "GDB_728",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111644,
+          "name": "Libram of Clarity",
+          "cardId": "GDB_137",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111650,
+          "name": "Libram of Faith",
+          "cardId": "GDB_139",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114543,
+          "name": "Renewing Flames",
+          "cardId": "EDR_255",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114632,
+          "name": "Ursine Maul",
+          "cardId": "EDR_253",
+          "quantity": 2
+        },
+        {
+          "dbfId": 118222,
+          "name": "Sizzling Cinder",
+          "cardId": "TLC_249",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121150,
+          "name": "Acceleration Aura",
+          "cardId": "END_011",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAZ8FDIa/BrHBBuHrBqn1BrSBB4OKB7qWB4KYB/WYB+usB4qxB5mxBwnHsAbt3waS4Aac6Aai6Abv/gbI/wbOmwe+sgcAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-mage-spell-quest": {
+      "archetypeName": "Spell Quest Mage",
+      "cardClass": "MAGE",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/spell-quest-mage-156-legend-theo-across-the-timeways/",
+      "player": "Theo",
+      "rank": 156,
+      "dustCost": 6300,
+      "cards": [
+        {
+          "dbfId": 108337,
+          "name": "Rising Waves",
+          "cardId": "VAC_953",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118183,
+          "name": "The Forbidden Sequence",
+          "cardId": "TLC_460",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102449,
+          "name": "Hidden Objects",
+          "cardId": "TOY_037",
+          "quantity": 2
+        },
+        {
+          "dbfId": 103269,
+          "name": "Manufacturing Error",
+          "cardId": "TOY_371",
+          "quantity": 2
+        },
+        {
+          "dbfId": 103270,
+          "name": "Yogg in the Box",
+          "cardId": "TOY_372",
+          "quantity": 2
+        },
+        {
+          "dbfId": 103347,
+          "name": "Spot the Difference",
+          "cardId": "TOY_374",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105573,
+          "name": "Malfunction",
+          "cardId": "MIS_107",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106369,
+          "name": "Seabreeze Chalice",
+          "cardId": "VAC_520",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106373,
+          "name": "Tide Pools",
+          "cardId": "VAC_522",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111344,
+          "name": "Pocket Dimension",
+          "cardId": "GDB_133",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111366,
+          "name": "Primordial Glyph",
+          "cardId": "CORE_UNG_941",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113178,
+          "name": "Shield Battery",
+          "cardId": "SC_759",
+          "quantity": 2
+        },
+        {
+          "dbfId": 116977,
+          "name": "Spark of Life",
+          "cardId": "EDR_872",
+          "quantity": 2
+        },
+        {
+          "dbfId": 118266,
+          "name": "Storage Scuffle",
+          "cardId": "TLC_365",
+          "quantity": 2
+        },
+        {
+          "dbfId": 118616,
+          "name": "Relic of Kings",
+          "cardId": "TLC_334",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121675,
+          "name": "Sands of Time",
+          "cardId": "TIME_EVENT_999",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAf0EArHOBqebBw6xoAblpgbmpgazpwbluAaBvwaFvwbw5QaG5gaa9AbxkQf6mwfYngfLtgcAAA==",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dk-leech": {
+      "archetypeName": "Blood/Unholy Leech Death Knight",
+      "cardClass": "DEATHKNIGHT",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/blood-unholy-leech-death-knight-164-legend-unknown-across-the-timeways/",
+      "player": "Unknown",
+      "rank": 164,
+      "dustCost": 17340,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 105512,
+          "name": "Foamrender",
+          "cardId": "MIS_101",
+          "quantity": 1
+        },
+        {
+          "dbfId": 108967,
+          "name": "Griftah, Trusted Vendor",
+          "cardId": "VAC_959",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111334,
+          "name": "Corpse Explosion",
+          "cardId": "CORE_RLK_035",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111682,
+          "name": "Exarch Maladaar",
+          "cardId": "GDB_470",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 112846,
+          "name": "Kerrigan, Queen of Blades",
+          "cardId": "SC_004",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113321,
+          "name": "Ysera, Emerald Aspect",
+          "cardId": "EDR_000",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114305,
+          "name": "Infested Breath",
+          "cardId": "EDR_814",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114966,
+          "name": "Sanguine Infestation",
+          "cardId": "EDR_817",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115090,
+          "name": "Shaladrassil",
+          "cardId": "EDR_846",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115139,
+          "name": "Nightmare Lord Xavius",
+          "cardId": "EDR_856",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 80647,
+          "name": "Chillfallen Baron",
+          "cardId": "RLK_708",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105855,
+          "name": "Dreadhound Handler",
+          "cardId": "VAC_514",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113973,
+          "name": "Creature of Madness",
+          "cardId": "EDR_105",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114301,
+          "name": "Hideous Husk",
+          "cardId": "EDR_810",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114967,
+          "name": "Morbid Swarm",
+          "cardId": "EDR_813",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117434,
+          "name": "Reanimated Pterrordax",
+          "cardId": "TLC_436",
+          "quantity": 2
+        },
+        {
+          "dbfId": 118279,
+          "name": "Blob of Tar",
+          "cardId": "TLC_468",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121058,
+          "name": "Remnant of Rage",
+          "cardId": "END_004",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAYjaBQ7HpAaouAan0wbm5QbC6Aaq6gbO8Qap9QaB/QaWggeSgwfDgweDigeCmAcIh/YE/7oGtfoG/fwGl4IHupUHh5wH4rEHAAED6N4Gx6QG9bMGx6QG97MGx6QGAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-warrior-dragon": {
+      "archetypeName": "Dragon Warrior",
+      "cardClass": "WARRIOR",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/dragon-warrior-165-legend-unknown-across-the-timeways/",
+      "player": "Unknown",
+      "rank": 165,
+      "dustCost": 5520,
+      "cards": [
+        {
+          "dbfId": 69643,
+          "name": "Grommash Hellscream",
+          "cardId": "CORE_EX1_414",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118404,
+          "name": "The Great Dracorex",
+          "cardId": "DINO_401",
+          "quantity": 1
+        },
+        {
+          "dbfId": 102222,
+          "name": "Royal Librarian",
+          "cardId": "CORE_SW_066",
+          "quantity": 2
+        },
+        {
+          "dbfId": 103530,
+          "name": "Giftwrapped Whelp",
+          "cardId": "TOY_386",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111459,
+          "name": "Sanguine Depths",
+          "cardId": "CORE_REV_990",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114218,
+          "name": "Darkrider",
+          "cardId": "EDR_456",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114219,
+          "name": "Brood Keeper",
+          "cardId": "EDR_457",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115191,
+          "name": "Petal Peddler",
+          "cardId": "EDR_889",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115688,
+          "name": "Shadowflame Suffusion",
+          "cardId": "FIR_939",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117714,
+          "name": "Windpeak Wyrm",
+          "cardId": "TLC_600",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117918,
+          "name": "Stonecarver",
+          "cardId": "TLC_623",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120503,
+          "name": "Stadium Announcer",
+          "cardId": "TIME_034",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120856,
+          "name": "Whelp of the Infinite",
+          "cardId": "TIME_045",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120975,
+          "name": "Precursory Strike",
+          "cardId": "TIME_750",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121168,
+          "name": "Eternal Toil",
+          "cardId": "END_020",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121196,
+          "name": "Prescient Slitherdrake",
+          "cardId": "END_033",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAQcCi6AEhJ0HDs6eBuqoBuPmBqr8Bqv8BveDB+iHB9KXB56ZB7etB5iwB4+xB9CyB+yyBwAA",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dk-rainbow-handbuff": {
+      "archetypeName": "Rainbow Handbuff Death Knight",
+      "cardClass": "DEATHKNIGHT",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/rainbow-handbuff-death-knight-345-legend-risewashere-across-the-timeways/",
+      "player": "RiseWasHere",
+      "rank": 345,
+      "dustCost": 4920,
+      "cards": [
+        {
+          "dbfId": 80819,
+          "name": "Gnome Muncher",
+          "cardId": "RLK_720",
+          "quantity": 1
+        },
+        {
+          "dbfId": 114967,
+          "name": "Morbid Swarm",
+          "cardId": "EDR_813",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117308,
+          "name": "Poison Breath",
+          "cardId": "CORE_EDR_002",
+          "quantity": 1
+        },
+        {
+          "dbfId": 121026,
+          "name": "City Chief Esho",
+          "cardId": "TLC_110",
+          "quantity": 1
+        },
+        {
+          "dbfId": 80647,
+          "name": "Chillfallen Baron",
+          "cardId": "RLK_708",
+          "quantity": 2
+        },
+        {
+          "dbfId": 104633,
+          "name": "Rainbow Seamstress",
+          "cardId": "TOY_823",
+          "quantity": 2
+        },
+        {
+          "dbfId": 104634,
+          "name": "Darkthorn Quilter",
+          "cardId": "TOY_824",
+          "quantity": 2
+        },
+        {
+          "dbfId": 104694,
+          "name": "Amateur Puppeteer",
+          "cardId": "TOY_828",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105355,
+          "name": "Lesser Spinel Spellstone",
+          "cardId": "TOY_825",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105855,
+          "name": "Dreadhound Handler",
+          "cardId": "VAC_514",
+          "quantity": 2
+        },
+        {
+          "dbfId": 106063,
+          "name": "Toysnatching Geist",
+          "cardId": "MIS_006",
+          "quantity": 2
+        },
+        {
+          "dbfId": 107920,
+          "name": "Brittlebone Buccaneer",
+          "cardId": "VAC_436",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111319,
+          "name": "Nerubian Swarmguard",
+          "cardId": "CORE_RLK_062",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111321,
+          "name": "Blood Tap",
+          "cardId": "CORE_RLK_712",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117423,
+          "name": "Dread Raptor",
+          "cardId": "TLC_432",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117434,
+          "name": "Reanimated Pterrordax",
+          "cardId": "TLC_436",
+          "quantity": 2
+        },
+        {
+          "dbfId": 121058,
+          "name": "Remnant of Rage",
+          "cardId": "END_004",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAYjaBQSz9wSXgge8lAfCsQcNh/YEubEGurEG9rEGi7cG/7oGz7wGkMsG1+UG2eUGr5UHupUH4rEHAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dh-aggro-crewmate": {
+      "archetypeName": "Crewmate Aggro Demon Hunter",
+      "cardClass": "DEMONHUNTER",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/crewmate-aggro-demon-hunter-359-legend-tweeg-across-the-timeways/",
+      "player": "Tweeg",
+      "rank": 359,
+      "dustCost": 7800,
+      "cards": [
+        {
+          "dbfId": 102184,
+          "name": "Kayn Sunfury",
+          "cardId": "CORE_BT_187",
+          "quantity": 1
+        },
+        {
+          "dbfId": 108967,
+          "name": "Griftah, Trusted Vendor",
+          "cardId": "VAC_959",
+          "quantity": 1
+        },
+        {
+          "dbfId": 110908,
+          "name": "Dirdra, Rebel Captain",
+          "cardId": "GDB_117",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111313,
+          "name": "Troubled Mechanic",
+          "cardId": "GDB_463",
+          "quantity": 1
+        },
+        {
+          "dbfId": 97377,
+          "name": "Illidari Studies",
+          "cardId": "CORE_YOP_001",
+          "quantity": 2
+        },
+        {
+          "dbfId": 104515,
+          "name": "Red Card",
+          "cardId": "TOY_644",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110559,
+          "name": "Starlight Wanderer",
+          "cardId": "GDB_720",
+          "quantity": 2
+        },
+        {
+          "dbfId": 110564,
+          "name": "Crimson Commander",
+          "cardId": "GDB_722",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111075,
+          "name": "Emergency Meeting",
+          "cardId": "GDB_119",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111181,
+          "name": "Stranded Spaceman",
+          "cardId": "GDB_861",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111305,
+          "name": "Astral Vigilant",
+          "cardId": "GDB_461",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111906,
+          "name": "Voronei Recruiter",
+          "cardId": "GDB_471",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111934,
+          "name": "Headhunt",
+          "cardId": "GDB_473",
+          "quantity": 2
+        },
+        {
+          "dbfId": 114654,
+          "name": "Grim Harvest",
+          "cardId": "EDR_840",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117686,
+          "name": "Infestation",
+          "cardId": "TLC_902",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117813,
+          "name": "Insect Claw",
+          "cardId": "TLC_833",
+          "quantity": 2
+        },
+        {
+          "dbfId": 120785,
+          "name": "Tuskpiercer",
+          "cardId": "CORE_BAR_330",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 30,
+      "deckCode": "AAECAea5AwSongan0wa84gbR5QYN4fgFw7AG398G5N8G4+MGzeQGyeUGouoGvuoG3v8GtpcHtZgH0a8HAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-warlock-wallow-demon": {
+      "archetypeName": "Wallow Demon Warlock",
+      "cardClass": "WARLOCK",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/wallow-demon-warlock-407-legend-unknown-across-the-timeways/",
+      "player": "Unknown",
+      "rank": 407,
+      "dustCost": 16440,
+      "cards": [
+        {
+          "dbfId": 102983,
+          "name": "Zilliax Deluxe 3000",
+          "cardId": "TOY_330",
+          "quantity": 1
+        },
+        {
+          "dbfId": 111914,
+          "name": "The Ceaseless Expanse",
+          "cardId": "GDB_142",
+          "quantity": 1
+        },
+        {
+          "dbfId": 113321,
+          "name": "Ysera, Emerald Aspect",
+          "cardId": "EDR_000",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115025,
+          "name": "Rotten Apple",
+          "cardId": "EDR_482",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115039,
+          "name": "Rotheart Dryad",
+          "cardId": "EDR_485",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115044,
+          "name": "Wallow, the Wretched",
+          "cardId": "EDR_487",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115139,
+          "name": "Nightmare Lord Xavius",
+          "cardId": "EDR_856",
+          "quantity": 1
+        },
+        {
+          "dbfId": 115971,
+          "name": "Demolition Renovator",
+          "cardId": "CORE_REV_023",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117723,
+          "name": "Bob the Bartender",
+          "cardId": "BG31_BOB",
+          "quantity": 1
+        },
+        {
+          "dbfId": 117762,
+          "name": "Elise the Navigator",
+          "cardId": "TLC_100",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118210,
+          "name": "Razidir",
+          "cardId": "TLC_463",
+          "quantity": 1
+        },
+        {
+          "dbfId": 118250,
+          "name": "Overgrown Horror",
+          "cardId": "EDR_654",
+          "quantity": 1
+        },
+        {
+          "dbfId": 104858,
+          "name": "Sketch Artist",
+          "cardId": "TOY_916",
+          "quantity": 2
+        },
+        {
+          "dbfId": 105097,
+          "name": "Table Flip",
+          "cardId": "TOY_883",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111133,
+          "name": "Foreboding Flame",
+          "cardId": "GDB_121",
+          "quantity": 2
+        },
+        {
+          "dbfId": 111169,
+          "name": "Abduction Ray",
+          "cardId": "GDB_123",
+          "quantity": 2
+        },
+        {
+          "dbfId": 113973,
+          "name": "Creature of Madness",
+          "cardId": "EDR_105",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115033,
+          "name": "Fractured Power",
+          "cardId": "EDR_483",
+          "quantity": 2
+        },
+        {
+          "dbfId": 115651,
+          "name": "Shadowflame Stalker",
+          "cardId": "FIR_924",
+          "quantity": 2
+        },
+        {
+          "dbfId": 117892,
+          "name": "Cursed Catacombs",
+          "cardId": "TLC_451",
+          "quantity": 2
+        },
+        {
+          "dbfId": 119798,
+          "name": "Raptor Herald",
+          "cardId": "CORE_EDR_004",
+          "quantity": 2
+        }
+      ],
+      "cardCount": 32,
+      "deckCode": "AAECAa35AwzHpAaq6gap9QbRggffggfkggfDgweDigfblweCmAfCmwfqmwcJmrMGibUGneQGweQGtfoG2YIHw4cHhJkH9qcHAAED6N4Gx6QG9bMGx6QG97MGx6QGAAA=",
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-dh-pirate-aggro": {
+      "archetypeName": "Pirate Aggro Demon Hunter",
+      "cardClass": "DEMONHUNTER",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/pirate-aggro-demon-hunter-27-legend-unknown-wild-s143/",
+      "player": "Unknown",
+      "rank": 27,
+      "dustCost": 6720,
+      "cards": [
+        {
+          "name": "Dispose of Evidence",
+          "quantity": 2,
+          "cost": 0
+        },
+        {
+          "name": "Consume Magic",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Illidari Studies",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Mana Burn",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Field of Strife",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Magnifying Glaive",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Glide",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Kurtrus, Demon-Render",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Mistake",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Patches the Pilot",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Patches the Pirate",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Space Pirate",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Treasure Distributor",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Adrenaline Fiend",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Cult Neophyte",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Parachute Brigand",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Ship's Cannon",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Hozen Roughhouser",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Dangerous Cliffside",
+          "quantity": 2,
+          "cost": 4
+        }
+      ],
+      "cardCount": 30,
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-mage-xl-quest": {
+      "archetypeName": "XL Quest Mage",
+      "cardClass": "MAGE",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/xl-quest-mage-104-legend-renojackson-wild-s143/",
+      "player": "RenoJackson",
+      "rank": 104,
+      "dustCost": 14740,
+      "cards": [
+        {
+          "name": "Magic Trick",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Scrappy Scavenger",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "The Forbidden Sequence",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Ancient Mysteries",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Hidden Objects",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Infinitize the Maxitude",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Primordial Glyph",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Rewind",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Runed Orb",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Vast Wisdom",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Buy One, Get One Freeze",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Ice Block",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Objection!",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Devolving Missiles",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Tidepool Pupil",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Card Grader",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Prince Renathal",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Tide Pools",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "E.T.C., Band Manager",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Hoard Pillager",
+          "quantity": 2,
+          "cost": 4
+        },
+        {
+          "name": "Nightmare Lord Xavius",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Southsea Scoundrel",
+          "quantity": 2,
+          "cost": 4
+        },
+        {
+          "name": "Treacherous Tormentor",
+          "quantity": 2,
+          "cost": 4
+        },
+        {
+          "name": "Theotar, the Mad Duke",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Tae'thelan Bloodwatcher",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Archmage Antonidas",
+          "quantity": 1,
+          "cost": 7
+        },
+        {
+          "name": "Thaddius, Monstrosity",
+          "quantity": 1,
+          "cost": 10
+        }
+      ],
+      "cardCount": 43,
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-warlock-xl-quest-reno": {
+      "archetypeName": "XL Quest Reno Warlock",
+      "cardClass": "WARLOCK",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/xl-quest-reno-warlock-127-legend-unknown-wild-s143/",
+      "player": "Unknown",
+      "rank": 127,
+      "dustCost": 29260,
+      "cards": [
+        {
+          "name": "Cursed Catacombs",
+          "quantity": 1,
+          "cost": 0
+        },
+        {
+          "name": "Ritual of Doom",
+          "quantity": 1,
+          "cost": 0
+        },
+        {
+          "name": "Chaotic Consumption",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Dark Pact",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Fracking",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Plague of Flames",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "The Soularium",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Darkbomb",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Defile",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Demonic Project",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Plot Twist",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Mortal Eradication",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Pop'gar the Putrid",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Tamsin's Phylactery",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Wing Welding",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Symphony of Sins",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "Sargeras, the Destroyer",
+          "quantity": 1,
+          "cost": 9
+        },
+        {
+          "name": "Table Flip",
+          "quantity": 1,
+          "cost": 10
+        },
+        {
+          "name": "Raise Dead",
+          "quantity": 1,
+          "cost": 0
+        },
+        {
+          "name": "Battle at the End Time",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Sir Finley, Sea Guide",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Crystal Tender",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Cult Neophyte",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Dirty Rat",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Far Watch Post",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Zephrys the Great",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "\"Health\" Drink",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Fae Trickster",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Prince Renathal",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Razorscale",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Reverberations",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Smothering Starfish",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Timeline Accelerator",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Blademaster Okani",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "E.T.C., Band Manager",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Elise the Navigator",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "The Curator",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "Reno Jackson",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Theotar, the Mad Duke",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Reno, Lone Ranger",
+          "quantity": 1,
+          "cost": 8
+        },
+        {
+          "name": "Plot Twist",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Skulking Geist",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Endbringer Umbra",
+          "quantity": 1,
+          "cost": 7
+        }
+      ],
+      "cardCount": 43,
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-druid-xl-malygos-ysiel": {
+      "archetypeName": "XL Malygos Ysiel Druid",
+      "cardClass": "DRUID",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/xl-malygos-ysiel-druid-462-legend-wraxiusgaming-wild-s143/",
+      "player": "Wraxius",
+      "rank": 462,
+      "dustCost": 0,
+      "cards": [
+        {
+          "name": "Aquatic Form",
+          "quantity": 2,
+          "cost": 0
+        },
+        {
+          "name": "Biology Project",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Malfurion's Gift",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Moonbeam",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Waveshaping",
+          "quantity": 2,
+          "cost": 1
+        },
+        {
+          "name": "Capture Coldtooth Mine",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Invigorate",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Solar Eclipse",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Story of Barnabus",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Wild Growth",
+          "quantity": 2,
+          "cost": 2
+        },
+        {
+          "name": "Swipe",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Nourish",
+          "quantity": 2,
+          "cost": 5
+        },
+        {
+          "name": "Wildheart Guff",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "Nightshade Bud",
+          "quantity": 2,
+          "cost": 8
+        },
+        {
+          "name": "Aviana",
+          "quantity": 1,
+          "cost": 9
+        },
+        {
+          "name": "Ysiel Windsinger",
+          "quantity": 1,
+          "cost": 9
+        },
+        {
+          "name": "Eonar, the Life-Binder",
+          "quantity": 1,
+          "cost": 10
+        },
+        {
+          "name": "Ultimate Infestation",
+          "quantity": 2,
+          "cost": 10
+        },
+        {
+          "name": "Press the Advantage",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Pendant of Earth",
+          "quantity": 2,
+          "cost": 3
+        },
+        {
+          "name": "Prince Renathal",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Shattered Reflections",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "Sleep Under the Stars",
+          "quantity": 2,
+          "cost": 8
+        },
+        {
+          "name": "Malygos",
+          "quantity": 1,
+          "cost": 9
+        }
+      ],
+      "cardCount": 40,
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    },
+    "deck-warrior-xl-reno": {
+      "archetypeName": "XL Reno Warrior",
+      "cardClass": "WARRIOR",
+      "tier": 3,
+      "tierName": "Off-Meta Decks",
+      "sourceUrl": "https://www.hearthstonetopdecks.com/decks/xl-reno-warrior-1110-legend-taniaunivers-wild-s143/",
+      "player": "TaniaUnivers",
+      "rank": 1110,
+      "dustCost": 35320,
+      "cards": [
+        {
+          "name": "Unleash the Crocolisks",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Bladestorm",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Drywhisker Armorer",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Iceblood Garrison",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Quality Assurance",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Shield Block",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Stoneskin Armorer",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Bulwark of Azzinoth",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "From the Depths",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Igneous Lavagorger",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Sanitize",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Brawl",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "For Glory!",
+          "quantity": 1,
+          "cost": 5
+        },
+        {
+          "name": "Deepminer Brann",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Hamm, the Hungry",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Boomboss Tho'grun",
+          "quantity": 1,
+          "cost": 8
+        },
+        {
+          "name": "Shield Shatter",
+          "quantity": 1,
+          "cost": 10
+        },
+        {
+          "name": "Zilliax Deluxe 3000",
+          "quantity": 1,
+          "cost": 0
+        },
+        {
+          "name": "Sir Finley, Sea Guide",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Sphere of Sapience",
+          "quantity": 1,
+          "cost": 1
+        },
+        {
+          "name": "Astalor Bloodsworn",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Dirty Rat",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Zephrys the Great",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "All You Can Eat",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Card Grader",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Lord Barov",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Mixologist",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "New Heights",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Prince Renathal",
+          "quantity": 1,
+          "cost": 3
+        },
+        {
+          "name": "Aftershocks",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "E.T.C., Band Manager",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Nightmare Lord Xavius",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Bob the Bartender",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Reno Jackson",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Theotar, the Mad Duke",
+          "quantity": 1,
+          "cost": 6
+        },
+        {
+          "name": "Mutanus the Devourer",
+          "quantity": 1,
+          "cost": 7
+        },
+        {
+          "name": "Warmaster Blackhorn",
+          "quantity": 1,
+          "cost": 7
+        },
+        {
+          "name": "Reno, Lone Ranger",
+          "quantity": 1,
+          "cost": 8
+        },
+        {
+          "name": "Sleep Under the Stars",
+          "quantity": 1,
+          "cost": 8
+        },
+        {
+          "name": "The Ceaseless Expanse",
+          "quantity": 1,
+          "cost": 125
+        },
+        {
+          "name": "Dirty Rat",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Youthful Brewmaster",
+          "quantity": 1,
+          "cost": 2
+        },
+        {
+          "name": "Igneous Lavagorger",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Twin Module",
+          "quantity": 1,
+          "cost": 4
+        },
+        {
+          "name": "Perfect Module",
+          "quantity": 1,
+          "cost": 5
+        }
+      ],
+      "cardCount": 45,
+      "firstSeen": "2026-05-16",
+      "lastSeen": "2026-05-16"
+    }
+  }
+}
