@@ -3,26 +3,11 @@ import { notFound } from "next/navigation";
 import { getDeckById, DECKS } from "@/data/decks";
 import { generateDeckMetadata } from "@/lib/seo";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { ALL_CARDS, type RealCard, getRepresentativeCardId, getCardArtUrl } from "@/data/real-cards";
+import { HS_CLASSES, CLASS_COLORS } from "@/data/classes";
+import { DeckCardEntry, Deck } from "@/types";
 import { DeckCodeCopy } from "@/components/decks/deck-code-copy";
-import { FavoriteButton } from "@/components/decks/favorite-button";
-
-import { ALL_CARDS, type RealCard } from "@/data/real-cards";
-import { HS_CLASSES, CLASS_COLORS, CLASS_ZH } from "@/data/classes";
-import { DeckCardEntry } from "@/types";
-import {
-  ArrowLeft, TrendingUp, Users, Zap, Gem, Gauge, Gamepad2,
-  BookOpen, Swords, Target, Lightbulb, Coins, ChevronRight,
-  Shield, Flame,
-} from "lucide-react";
-
-const TIER_STYLES: Record<number, string> = {
-  1: "text-[oklch(0.48_0.150_45)] bg-[oklch(0.58_0.160_50)_/_12%] border-[oklch(0.48_0.150_45)_/_25%]",
-  2: "text-[oklch(0.42_0.160_290)] bg-[oklch(0.48_0.170_290)_/_12%] border-[oklch(0.42_0.160_290)_/_25%]",
-  3: "text-[oklch(0.42_0.130_250)] bg-[oklch(0.50_0.140_250)_/_12%] border-[oklch(0.42_0.130_250)_/_25%]",
-};
+import { CopyDeckCodeClient } from "@/components/decks/copy-deck-code-client";
 
 function getCard(id: string): RealCard | undefined {
   return ALL_CARDS.find(c => c.id === id);
@@ -40,6 +25,20 @@ function groupCardsByCost(entries: DeckCardEntry[]) {
   for (const [, cards] of groups) cards.sort((a, b) => a.card.name.localeCompare(b.card.name));
   return groups;
 }
+
+const CLASS_LETTERS: Record<string, string> = {
+  WARRIOR: "战", HUNTER: "猎", ROGUE: "贼", PALADIN: "骑",
+  MAGE: "法", PRIEST: "牧", WARLOCK: "术", SHAMAN: "萨",
+  DRUID: "德", DEMONHUNTER: "恶", DEATHKNIGHT: "死",
+};
+
+const RARITY_COLORS: Record<string, string> = {
+  FREE: "var(--rarity-free)",
+  COMMON: "var(--rarity-common)",
+  RARE: "var(--rarity-rare)",
+  EPIC: "var(--rarity-epic)",
+  LEGENDARY: "var(--rarity-legendary)",
+};
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -63,6 +62,7 @@ export default async function DeckDetailPage({ params }: { params: Promise<{ id:
 
   const classInfo = HS_CLASSES.find(c => c.id === deck.cardClass) || { nameZh: "中立", icon: "🎯" };
   const classColor = CLASS_COLORS[deck.cardClass] || "#888";
+  const classLetter = CLASS_LETTERS[deck.cardClass] || "?";
   const grouped = groupCardsByCost(deck.cards);
   const totalCards = deck.cards.reduce((s, e) => s + e.quantity, 0);
   const sortedCosts = [...grouped.keys()].sort((a, b) => a - b);
@@ -71,418 +71,339 @@ export default async function DeckDetailPage({ params }: { params: Promise<{ id:
     cost, count: grouped.get(cost)!.reduce((s, e) => s + e.quantity, 0),
   }));
   const maxCount = Math.max(...manaCurve.map(m => m.count));
+
   const guide = deck.guide;
+  const extDeck = deck as typeof deck & { sourceUrl?: string; player?: string; rank?: number };
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8">
+    <div>
       {/* Breadcrumb */}
-      <div className="flex items-center gap-2 text-sm text-muted-foreground mb-6">
-        <Link href="/decks" className="hover:text-foreground flex items-center gap-1">
-          <ArrowLeft className="h-3 w-3" /> 卡组列表
-        </Link>
-        <span>/</span>
-        <span className="text-foreground">{deck.nameZh || deck.name}</span>
+      <div className="mx-auto max-w-280 px-8">
+        <div className="flex items-center gap-1.5 text-[13px] text-muted-foreground py-3 flex-wrap">
+          <Link href="/" className="hover:text-foreground transition-colors">首页</Link>
+          <span className="text-border">/</span>
+          <Link href="/decks" className="hover:text-foreground transition-colors">卡组</Link>
+          <span className="text-border">/</span>
+          <span className="text-foreground font-medium">{deck.nameZh || deck.name}</span>
+        </div>
       </div>
 
       {/* Hero Banner */}
-      <div className="relative rounded-xl overflow-hidden mb-8"
-        style={{ background: `linear-gradient(135deg, ${classColor}22, ${classColor}08, transparent)` }}>
-        <div className="absolute inset-0 border border-border/50 rounded-xl" />
-        <div className="relative p-6 md:p-8 flex flex-col md:flex-row gap-6">
-          {/* Left: Title + Stats */}
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-4xl">{classInfo.icon}</span>
-              <div>
-                <h1 className="font-heading text-2xl md:text-3xl font-bold">{deck.nameZh || deck.name}</h1>
-                <p className="text-sm text-muted-foreground mt-0.5">
-                  {deck.archetype} · {deck.format === "standard" ? "标准模式" : "狂野模式"}
-                </p>
-              </div>
-              {deck.tier && (
-                <Badge variant="outline" className={
-                  TIER_STYLES[deck.tier] || TIER_STYLES[3]
-                }>Tier {deck.tier}</Badge>
-              )}
-            </div>
-            <p className="text-muted-foreground text-sm max-w-xl mb-4">{deck.description}</p>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              {deck.winRate && (
-                <div className="bg-background/50 rounded-lg p-3 border border-border/30">
-                  <div className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-                    <TrendingUp className="h-3 w-3" /> 胜率
-                  </div>
-                  <div className="text-lg font-bold" style={{ color: deck.winRate >= 54 ? "#34d399" : deck.winRate >= 50 ? "#60a5fa" : "#fbbf24" }}>
-                    {deck.winRate}%
-                  </div>
-                </div>
-              )}
-              {deck.gamesPlayed && (
-                <div className="bg-background/50 rounded-lg p-3 border border-border/30">
-                  <div className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-                    <Users className="h-3 w-3" /> 对战场次
-                  </div>
-                  <div className="text-lg font-bold">{deck.gamesPlayed.toLocaleString()}</div>
-                </div>
-              )}
-              {deck.dustCost && (
-                <div className="bg-background/50 rounded-lg p-3 border border-border/30">
-                  <div className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-                    <Gem className="h-3 w-3" /> 合成粉尘
-                  </div>
-                  <div className="text-lg font-bold">{deck.dustCost.toLocaleString()}</div>
-                </div>
-              )}
-              {deck.difficulty && (
-                <div className="bg-background/50 rounded-lg p-3 border border-border/30">
-                  <div className="text-xs text-muted-foreground flex items-center gap-1 mb-1">
-                    <Gauge className="h-3 w-3" /> 操作难度
-                  </div>
-                  <div className="text-lg font-bold">
-                    {Array.from({ length: 5 }, (_, i) => (
-                      <span key={i} className={i < deck.difficulty! ? "text-yellow-400" : "text-gray-600"}>★</span>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-
-            {/* Action Buttons */}
-            <div className="flex items-center gap-3 mt-4">
-              <DeckCodeCopy code={deck.deckCode} name={deck.nameZh || deck.name} />
-              <FavoriteButton deckId={deck.id} deckName={deck.nameZh || deck.name} />
-            </div>
+      {(() => {
+        const repCardId = getRepresentativeCardId(deck.cards.map(c => c.cardId));
+        const artUrl = repCardId ? getCardArtUrl(repCardId, "512") : undefined;
+        return (
+          <section
+            className="relative overflow-hidden"
+            style={{
+              background: artUrl
+                ? `url('${artUrl}') center/cover no-repeat`
+                : `linear-gradient(135deg, ${classColor}60, ${classColor}30)`,
+            }}
+          >
+            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-black/40" />
+            <div className="mx-auto max-w-280 px-8 py-12 md:py-20 relative z-10">
+              <h1 className="font-heading text-[clamp(32px,5vw,56px)] leading-[1.1] tracking-tight text-white mb-3">
+                {deck.nameZh || deck.name}
+              </h1>
+          <div className="text-lg text-white/75 flex items-center gap-2.5 flex-wrap">
+            <span className="w-7 h-7 rounded-full bg-white/15 backdrop-blur-sm grid place-items-center text-[13px] font-bold">
+              {classLetter}
+            </span>
+            <span>{classInfo.nameZh}</span>
+            <span className="opacity-40">&middot;</span>
+            <span>{deck.format === "standard" ? "标准模式" : "狂野模式"}</span>
+            {deck.tier && (
+              <>
+                <span className="opacity-40">&middot;</span>
+                <span className="font-mono text-[11px] font-semibold px-2 py-0.5 rounded-full bg-white/15 text-white">T{deck.tier}</span>
+              </>
+            )}
           </div>
+        </div>
+      </section>
+      );
+      })()}
 
-          {/* Right: Mana Curve */}
-          <Card className="w-full md:w-56 border-border/30 bg-background/50 shrink-0">
-            <CardHeader className="pb-2 pt-4 px-4">
-              <CardTitle className="text-sm flex items-center gap-1.5">
-                <Zap className="h-3.5 w-3.5" /> 法力曲线
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="px-4 pb-4">
-              <div className="flex items-end gap-0.5 h-24">
-                {manaCurve.map(({ cost, count }) => (
-                  <div key={cost} className="flex-1 flex flex-col items-center gap-1">
-                    <div className="text-[9px] text-muted-foreground">{count}</div>
-                    <div className="w-full rounded-t-sm transition-all" style={{
-                      height: `${(count / maxCount) * 100}%`,
-                      backgroundColor: classColor,
-                      opacity: 0.5 + (count / maxCount) * 0.5,
-                      minHeight: "4px",
-                    }} />
-                    <span className="text-[9px] text-muted-foreground">{cost}</span>
+      {/* Stats Row */}
+      <section className="py-6 md:py-8">
+        <div className="mx-auto max-w-280 px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {deck.winRate && (
+              <div className="bg-card border border-border rounded-xl p-5 text-center">
+                <div className="font-mono text-[clamp(24px,3vw,36px)] font-bold text-primary tabular-nums">{deck.winRate}%</div>
+                <div className="text-[13px] text-muted-foreground mt-1.5">胜率</div>
+              </div>
+            )}
+            {deck.gamesPlayed && (
+              <div className="bg-card border border-border rounded-xl p-5 text-center">
+                <div className="font-mono text-[clamp(24px,3vw,36px)] font-bold tabular-nums">{(deck.gamesPlayed / 1000).toFixed(1)}k</div>
+                <div className="text-[13px] text-muted-foreground mt-1.5">场次</div>
+              </div>
+            )}
+            {deck.dustCost && (
+              <div className="bg-card border border-border rounded-xl p-5 text-center">
+                <div className="font-mono text-[clamp(24px,3vw,36px)] font-bold tabular-nums">{deck.dustCost.toLocaleString()}</div>
+                <div className="text-[13px] text-muted-foreground mt-1.5">尘造价</div>
+              </div>
+            )}
+            {deck.difficulty && (
+              <div className="bg-card border border-border rounded-xl p-5 text-center">
+                <div className="flex justify-center gap-0.5 mt-1">
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <svg key={i} viewBox="0 0 20 20" className="w-4.5 h-4.5">
+                      <path d="M10 1l2.39 4.84 5.34.78-3.87 3.77.91 5.32L10 13.27 5.23 15.71l.91-5.32L2.27 6.62l5.34-.78z" fill={i < deck.difficulty! ? "#FFD700" : "#D9D9D9"} />
+                    </svg>
+                  ))}
+                </div>
+                <div className="text-[13px] text-muted-foreground mt-1.5">难度</div>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Copy Deck Code */}
+      {deck.deckCode && (
+        <section className="pb-6 md:pb-8">
+          <div className="mx-auto max-w-280 px-8 flex items-center justify-center gap-5 flex-wrap">
+            <div className="font-mono text-[13px] text-muted-foreground bg-card border border-border rounded-xl px-4 py-2.5 max-w-80 truncate">
+              {deck.deckCode}
+            </div>
+            <CopyDeckCodeClient code={deck.deckCode} />
+          </div>
+        </section>
+      )}
+
+      {/* Card List + Sidebar */}
+      <section className="border-t border-border py-8">
+        <div className="mx-auto max-w-280 px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-14 items-start">
+            {/* Card List */}
+            <div>
+              <h3 className="text-xl font-semibold mb-5">
+                卡牌列表 <span className="font-mono text-[13px] text-muted-foreground font-normal">({totalCards}张)</span>
+              </h3>
+              <div className="flex flex-col gap-1">
+                {sortedCosts.map(cost => (
+                  <div key={cost}>
+                    <div className="font-mono text-xs font-semibold text-muted-foreground tracking-wide py-3 border-b border-border mb-1">
+                      {cost}费
+                    </div>
+                    {grouped.get(cost)!.map(({ card, quantity }) => (
+                      <Link key={card.id} href={`/cards/${card.id}`}>
+                        <div className="flex items-center gap-3 px-3 py-2 rounded-lg bg-card border border-border hover:bg-background/50 transition-colors">
+                          <span className="w-7 h-7 rounded-full bg-(--mana-bg) text-(--mana-fg) font-mono text-[13px] font-bold grid place-items-center shrink-0">
+                            {card.cost}
+                          </span>
+                          <span className="flex-1 text-[15px] font-medium truncate">{card.nameZh || card.name}</span>
+                          {quantity === 2 && <span className="font-mono text-[13px] text-muted-foreground shrink-0">&times;2</span>}
+                          <span
+                            className="w-2 h-2 rounded-full shrink-0"
+                            style={{ backgroundColor: RARITY_COLORS[card.rarity] || RARITY_COLORS.COMMON }}
+                          />
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            {/* Sidebar: Mana Curve */}
+            <aside>
+              <div className="bg-card border border-border rounded-2xl p-6">
+                <h3 className="text-xl font-semibold mb-5">费用曲线</h3>
+                <div className="flex items-end gap-1.5 h-40 pb-7 relative">
+                  {manaCurve.map(({ cost, count }) => (
+                    <div key={cost} className="flex-1 flex flex-col items-center h-full justify-end relative">
+                      <span className="font-mono text-[11px] text-muted-foreground mb-1">{count}</span>
+                      <div
+                        className="w-full rounded-t bg-(--mana-bg) min-h-1 transition-all duration-400"
+                        style={{ height: `${(count / maxCount) * 100}%` }}
+                      />
+                      <span className="font-mono text-[11px] text-muted-foreground mt-1.5 absolute bottom-0">{cost}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </aside>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Tags */}
-      {deck.tags && deck.tags.length > 0 && (
-        <div className="flex flex-wrap gap-2 mb-6">
-          {deck.tags.map(tag => (
-            <Badge key={tag} variant="secondary" className="text-xs">{tag}</Badge>
-          ))}
-        </div>
-      )}
-
-      {/* Main Content: 2-column layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-
-        {/* Left Column: Guide Content */}
-        <div className="lg:col-span-2 space-y-6">
-
-          {/* Strategy Section */}
-          {guide && (
-            <>
+      {/* Strategy Section */}
+      {guide && (
+        <section className="border-t border-border py-8">
+          <div className="mx-auto max-w-280 px-8">
+            <h2 className="font-heading text-[clamp(28px,3.5vw,44px)] leading-tight tracking-tight mb-6">攻略指南</h2>
+            <div className="bg-card border border-border rounded-2xl p-7">
               {/* Strategy */}
-              <Card className="border-border/30">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-base flex items-center gap-2">
-                    <BookOpen className="h-4 w-4 text-blue-400" /> 核心策略
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{guide.strategy}</p>
-                </CardContent>
-              </Card>
+              {guide.strategy && (
+                <div className="mb-6">
+                  <h3 className="text-xl font-semibold mb-3">核心策略</h3>
+                  <p className="text-muted-foreground leading-relaxed">{guide.strategy}</p>
+                </div>
+              )}
 
               {/* Key Decisions */}
               {guide.keyDecisions.length > 0 && (
-                <Card className="border-border/30">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base flex items-center gap-2">
-                      <Lightbulb className="h-4 w-4 text-yellow-400" /> 关键决策点
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3">
-                      {guide.keyDecisions.map((decision, i) => (
-                        <li key={i} className="flex gap-3 text-sm">
-                          <span className="shrink-0 w-6 h-6 rounded-full bg-primary/15 text-primary flex items-center justify-center text-xs font-bold">
-                            {i + 1}
-                          </span>
-                          <span className="text-muted-foreground leading-relaxed">{decision}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+                <div className="mb-6 border-t border-border pt-6">
+                  <h3 className="text-xl font-semibold mb-3">关键决策点</h3>
+                  <ul className="space-y-3">
+                    {guide.keyDecisions.map((decision, i) => (
+                      <li key={i} className="flex gap-3 text-sm text-muted-foreground">
+                        <span className="shrink-0 w-6 h-6 rounded-full bg-primary/10 text-primary grid place-items-center text-xs font-bold">
+                          {i + 1}
+                        </span>
+                        <span className="leading-relaxed">{decision}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               )}
 
-              {/* Matchups */}
-              {guide.matchups.length > 0 && (
-                <Card className="border-border/30">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base flex items-center gap-2">
-                      <Swords className="h-4 w-4 text-red-400" /> 对阵攻略
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-4">
-                      {guide.matchups.map((mu, i) => (
-                        <div key={i} className="flex gap-4 items-start p-3 rounded-lg bg-background/50 border border-border/20">
-                          <div className="shrink-0 text-center">
-                            <span className="text-2xl">{HS_CLASSES.find(c => c.id === mu.opponent)?.icon || "🎮"}</span>
-                            <div className="text-xs text-muted-foreground mt-0.5">{mu.opponentZh}</div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 mb-1">
-                              <span className={`text-sm font-bold ${mu.winRate >= 55 ? "text-emerald-400" : mu.winRate >= 50 ? "text-blue-400" : "text-red-400"}`}>
-                                {mu.winRate}%
-                              </span>
-                              <div className="flex gap-0.5">
-                                {Array.from({ length: 5 }, (_, j) => (
-                                  <span key={j} className={`text-xs ${j < mu.difficulty ? "text-yellow-400" : "text-gray-600"}`}>★</span>
-                                ))}
-                              </div>
-                              <Badge variant="outline" className={`text-[10px] ${
-                                mu.winRate >= 55 ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/20"
-                                : mu.winRate >= 48 ? "bg-blue-500/10 text-blue-400 border-blue-500/20"
-                                : "bg-red-500/10 text-red-400 border-red-500/20"
-                              }`}>
-                                {mu.winRate >= 55 ? "优势" : mu.winRate >= 48 ? "均势" : "劣势"}
-                              </Badge>
+              {/* Mulligan Guide */}
+              {guide.mulligan && (
+                <div className="mb-6 border-t border-border pt-6">
+                  <h3 className="text-xl font-semibold mb-3">起手留牌</h3>
+                  <div className="space-y-3">
+                    {guide.mulligan.always.length > 0 && (
+                      <div>
+                        <div className="text-xs font-medium text-emerald-500 mb-1.5">必留</div>
+                        {guide.mulligan.always.map(cardId => {
+                          const c = getCard(cardId);
+                          return c ? (
+                            <Link key={cardId} href={`/cards/${cardId}`}
+                              className="flex items-center gap-1.5 text-sm py-1 text-muted-foreground hover:text-foreground transition-colors">
+                              <span className="font-bold text-emerald-500">{c.cost}</span>
+                              {c.nameZh}
+                            </Link>
+                          ) : null;
+                        })}
+                      </div>
+                    )}
+                    {guide.mulligan.situational.length > 0 && (
+                      <div>
+                        <div className="text-xs font-medium text-yellow-500 mb-1.5">视情况</div>
+                        {guide.mulligan.situational.map((s, i) => {
+                          const c = getCard(s.cardId);
+                          return c ? (
+                            <div key={i} className="mb-1.5">
+                              <Link href={`/cards/${s.cardId}`}
+                                className="flex items-center gap-1.5 text-sm py-0.5 text-muted-foreground hover:text-foreground transition-colors">
+                                <span className="font-bold text-yellow-500">{c.cost}</span>
+                                {c.nameZh}
+                              </Link>
+                              <p className="text-xs text-muted-foreground/60 ml-5">{s.reason}</p>
                             </div>
-                            <p className="text-xs text-muted-foreground leading-relaxed">{mu.tips}</p>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                          ) : null;
+                        })}
+                      </div>
+                    )}
+                  </div>
+                </div>
               )}
 
               {/* Substitutions */}
               {guide.substitutions.length > 0 && (
-                <Card className="border-border/30">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-base flex items-center gap-2">
-                      <Coins className="h-4 w-4 text-green-400" /> 替换建议
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    {guide.budgetNote && (
-                      <div className="text-xs text-muted-foreground mb-4 p-3 rounded-lg bg-green-500/5 border border-green-500/10">
-                        💰 {guide.budgetNote}
-                      </div>
-                    )}
-                    <div className="space-y-3">
-                      {guide.substitutions.map((sub, i) => {
-                        const origCard = getCard(sub.cardId);
-                        const replCard = getCard(sub.replacement);
-                        return (
-                          <div key={i} className="flex items-center gap-3 text-sm p-3 rounded-lg bg-background/50 border border-border/20">
-                            <span className="text-red-400 text-xs">移除</span>
-                            <span className="font-medium truncate max-w-30">
-                              {origCard?.nameZh || sub.cardId}
-                            </span>
-                            <ChevronRight className="h-3.5 w-3.5 text-muted-foreground shrink-0" />
-                            <span className="text-emerald-400 text-xs">加入</span>
-                            <span className="font-medium truncate max-w-30">
-                              {replCard?.nameZh || sub.replacement}
-                            </span>
-                            {sub.dustSaved && (
-                              <Badge variant="secondary" className="text-[10px] shrink-0">
-                                省 {sub.dustSaved} 尘
-                              </Badge>
-                            )}
-                            <span className="text-xs text-muted-foreground ml-auto hidden md:block">{sub.reason}</span>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
-            </>
-          )}
-
-          {/* Card List — game-style tile bars */}
-          <Card className="border-border/30">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base flex items-center gap-2">
-                <Shield className="h-4 w-4 text-blue-400" /> 卡牌列表 ({totalCards})
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-1">
-              {sortedCosts.map(cost => (
-                <div key={cost}>
-                  <div className="text-[10px] font-medium text-muted-foreground mb-1 px-1">
-                    {cost} 费 · {grouped.get(cost)!.reduce((s, e) => s + e.quantity, 0)} 张
-                  </div>
-                  <div className="space-y-0.5 mb-2">
-                    {grouped.get(cost)!.map(({ card, quantity }) => {
-                      const tileUrl = `https://art.hearthstonejson.com/v1/tiles/${card.id}.png`;
+                <div className="border-t border-border pt-6">
+                  <h3 className="text-xl font-semibold mb-3">替换建议</h3>
+                  <div className="space-y-2">
+                    {guide.substitutions.map((sub, i) => {
+                      const origCard = getCard(sub.cardId);
+                      const replCard = getCard(sub.replacement);
                       return (
-                        <Link key={card.id} href={`/cards/${card.id}`}>
-                          <div className="group relative flex items-center rounded overflow-hidden h-9.75 hover:ring-1 hover:ring-primary/40 transition-all">
-                            {/* Tile background image */}
-                            <img
-                              src={tileUrl}
-                              alt=""
-                              className="absolute inset-0 w-full h-full object-cover object-left"
-                              loading="lazy"
-                            />
-                            {/* Dark overlay for readability */}
-                            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                            {/* Left: mana cost */}
-                            <div className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold text-white bg-blue-600/90 ml-1.5 shrink-0 shadow-sm">
-                              {card.cost}
-                            </div>
-                            {/* Right: quantity + stats */}
-                            <div className="relative z-10 ml-auto flex items-center gap-1.5 mr-2 shrink-0">
-                              {card.attack != null && (
-                                <span className="text-[10px] text-white/70 tabular-nums">
-                                  {card.attack}/{card.health}
-                                </span>
-                              )}
-                              {card.rarity === "LEGENDARY" && (
-                                <span className="text-[10px] text-orange-300">★</span>
-                              )}
-                              {quantity === 2 && (
-                                <span className="text-[11px] font-bold text-white/90 bg-black/30 rounded px-1.5">×2</span>
-                              )}
-                            </div>
-                          </div>
-                        </Link>
+                        <div key={i} className="flex items-center gap-2 text-sm p-3 rounded-lg bg-background border border-border">
+                          <span className="text-red-400 text-xs">移除</span>
+                          <span className="font-medium truncate max-w-30">{origCard?.nameZh || sub.cardId}</span>
+                          <span className="text-muted-foreground">→</span>
+                          <span className="text-emerald-400 text-xs">加入</span>
+                          <span className="font-medium truncate max-w-30">{replCard?.nameZh || sub.replacement}</span>
+                          {sub.reason && <span className="text-xs text-muted-foreground ml-auto hidden md:block">{sub.reason}</span>}
+                        </div>
                       );
                     })}
                   </div>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Matchup Table */}
+      {guide && guide.matchups.length > 0 && (
+        <section className="border-t border-border py-8">
+          <div className="mx-auto max-w-280 px-8">
+            <h2 className="font-heading text-[clamp(28px,3.5vw,44px)] leading-tight tracking-tight mb-6">对阵胜率</h2>
+            <div className="bg-card border border-border rounded-2xl overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr>
+                    <th className="text-left text-xs font-semibold text-muted-foreground py-2.5 px-3 border-b-2 border-border font-mono tracking-wide uppercase">职业</th>
+                    <th className="text-left text-xs font-semibold text-muted-foreground py-2.5 px-3 border-b-2 border-border font-mono tracking-wide uppercase">胜率</th>
+                    <th className="text-left text-xs font-semibold text-muted-foreground py-2.5 px-3 border-b-2 border-border font-mono tracking-wide uppercase">攻略</th>
+                    <th className="text-left text-xs font-semibold text-muted-foreground py-2.5 px-3 border-b-2 border-border font-mono tracking-wide uppercase">趋势</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {guide.matchups.map((mu, i) => {
+                    const muColor = CLASS_COLORS[mu.opponent] || "#888";
+                    const wrClass = mu.winRate >= 55 ? "text-emerald-600" : mu.winRate >= 50 ? "text-muted-foreground" : "text-primary";
+                    const barClass = mu.winRate >= 55 ? "bg-emerald-600" : mu.winRate >= 50 ? "bg-muted-foreground/30" : "bg-primary";
+                    return (
+                      <tr key={i} className="border-b border-border last:border-b-0">
+                        <td className="py-2.5 px-3">
+                          <div className="flex items-center gap-2.5">
+                            <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: muColor }} />
+                            {mu.opponentZh}
+                          </div>
+                        </td>
+                        <td className={`py-2.5 px-3 font-mono font-semibold tabular-nums ${wrClass}`}>{mu.winRate}%</td>
+                        <td className="py-2.5 px-3 text-xs text-muted-foreground max-w-48 truncate">{mu.tips}</td>
+                        <td className="py-2.5 px-3">
+                          <div className="h-1.5 rounded bg-border w-20 overflow-hidden inline-block align-middle">
+                            <div className={`h-full rounded ${barClass}`} style={{ width: `${mu.winRate}%` }} />
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Decks */}
+      <section className="border-t border-border py-8">
+        <div className="mx-auto max-w-280 px-8">
+          <h2 className="font-heading text-[clamp(28px,3.5vw,44px)] leading-tight tracking-tight mb-6">同职业卡组</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {DECKS.filter(d => d.cardClass === deck.cardClass && d.id !== deck.id).slice(0, 4).map(d => {
+              const dColor = CLASS_COLORS[d.cardClass] || "#888";
+              return (
+                <Link key={d.id} href={`/decks/${d.id}`} className="group">
+                  <div className="bg-card border border-border rounded-xl p-4 transition-all duration-150 group-hover:-translate-y-0.5 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+                    <div className="font-semibold text-sm mb-1">{d.nameZh || d.name}</div>
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                      {d.winRate && <span className="font-mono tabular-nums">{d.winRate}%</span>}
+                      {d.tier && (
+                        <span className="font-mono text-[10px] font-semibold px-1.5 py-0.5 rounded-full bg-primary/10 text-primary">
+                          T{d.tier}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
-
-        {/* Right Sidebar */}
-        <div className="space-y-4">
-          {/* Mulligan Guide */}
-          {guide?.mulligan && (
-            <Card className="border-border/30">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-sm flex items-center gap-1.5">
-                  <Target className="h-3.5 w-3.5 text-orange-400" /> 留牌指南
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {guide.mulligan.always.length > 0 && (
-                  <div>
-                    <div className="text-[10px] font-medium text-emerald-400 mb-1.5">✅ 必留</div>
-                    {guide.mulligan.always.map(cardId => {
-                      const c = getCard(cardId);
-                      return c ? (
-                        <Link key={cardId} href={`/cards/${cardId}`}
-                          className="flex items-center gap-1.5 text-xs py-1 hover:text-foreground transition-colors text-muted-foreground">
-                          <span className="font-bold text-emerald-400">{c.cost}</span>
-                          {c.nameZh}
-                        </Link>
-                      ) : null;
-                    })}
-                  </div>
-                )}
-                {guide.mulligan.situational.length > 0 && (
-                  <div>
-                    <div className="text-[10px] font-medium text-yellow-400 mb-1.5">⚠️ 视情况</div>
-                    {guide.mulligan.situational.map((s, i) => {
-                      const c = getCard(s.cardId);
-                      return c ? (
-                        <div key={i} className="mb-1.5">
-                          <Link href={`/cards/${s.cardId}`}
-                            className="flex items-center gap-1.5 text-xs py-0.5 hover:text-foreground transition-colors text-muted-foreground">
-                            <span className="font-bold text-yellow-400">{c.cost}</span>
-                            {c.nameZh}
-                          </Link>
-                          <p className="text-[10px] text-muted-foreground/60 ml-4">{s.reason}</p>
-                        </div>
-                      ) : null;
-                    })}
-                  </div>
-                )}
-                {guide.mulligan.never.length > 0 && (
-                  <div>
-                    <div className="text-[10px] font-medium text-red-400 mb-1.5">❌ 必换</div>
-                    {guide.mulligan.never.map(cardId => {
-                      const c = getCard(cardId);
-                      return c ? (
-                        <Link key={cardId} href={`/cards/${cardId}`}
-                          className="flex items-center gap-1.5 text-xs py-1 hover:text-foreground transition-colors text-muted-foreground/60">
-                          <span className="font-bold text-red-400">{c.cost}</span>
-                          <span className="line-through">{c.nameZh}</span>
-                        </Link>
-                      ) : null;
-                    })}
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          )}
-
-          {/* Related Decks */}
-          <Card className="border-border/30">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm flex items-center gap-1.5">
-                <Flame className="h-3.5 w-3.5 text-orange-400" /> 同职业卡组
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-2">
-              {DECKS.filter(d => d.cardClass === deck.cardClass && d.id !== deck.id)
-                .slice(0, 4)
-                .map(d => (
-                  <Link key={d.id} href={`/decks/${d.id}`}
-                    className="flex items-center gap-2 text-xs py-1.5 px-2 rounded-md hover:bg-accent/50 transition-colors text-muted-foreground hover:text-foreground">
-                    <span>{d.nameZh || d.name}</span>
-                    {d.winRate && <span className="ml-auto text-[10px]">{d.winRate}%</span>}
-                    {d.tier && (
-                      <Badge variant="outline" className={`text-[9px] px-1 py-0 ${
-                        d.tier === 1 ? "bg-emerald-500/10 text-emerald-400"
-                        : d.tier === 2 ? "bg-blue-500/10 text-blue-400"
-                        : "bg-yellow-500/10 text-yellow-400"
-                      }`}>T{d.tier}</Badge>
-                    )}
-                  </Link>
-                ))}
-            </CardContent>
-          </Card>
-
-          {/* Data Source */}
-          <Card className="border-border/30">
-            <CardContent className="p-4">
-              <h3 className="text-xs font-medium mb-2">数据来源</h3>
-              <div className="space-y-1 text-[10px] text-muted-foreground">
-                <a href="https://hearthstonejson.com/" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">→ HearthstoneJSON</a>
-                <a href="https://hsreplay.net/" target="_blank" rel="noopener noreferrer" className="block hover:text-foreground transition-colors">→ HSReplay</a>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+      </section>
     </div>
   );
 }

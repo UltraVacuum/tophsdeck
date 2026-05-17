@@ -48,7 +48,14 @@ export function getCardImageUrl(cardId: string, size: "256" | "512" = "256"): st
   return getCardArtUrl(cardId, size);
 }
 
-export const ALL_CARDS: RealCard[] = rawData as RealCard[];
+const VALID_CLASSES = new Set([
+  "DEMONHUNTER", "DEATHKNIGHT", "DRUID", "HUNTER", "MAGE",
+  "PALADIN", "PRIEST", "ROGUE", "SHAMAN", "WARLOCK", "WARRIOR", "NEUTRAL",
+]);
+
+export const ALL_CARDS: RealCard[] = (rawData as RealCard[]).filter(
+  c => VALID_CLASSES.has(c.cardClass)
+);
 
 const cardById = new Map<string, RealCard>();
 const cardsByClass = new Map<string, RealCard[]>();
@@ -69,4 +76,22 @@ export function getRealCardById(id: string): RealCard | undefined {
 
 export function getRealCardsByClass(cardClass: string): RealCard[] {
   return cardsByClass.get(cardClass) || [];
+}
+
+const RARITY_ORDER: Record<string, number> = {
+  LEGENDARY: 4, EPIC: 3, RARE: 2, COMMON: 1, FREE: 0,
+};
+
+/** Pick the best representative card for a deck (highest rarity, then highest cost) */
+export function getRepresentativeCardId(cardIds: string[]): string | undefined {
+  let best: { id: string; rarity: number; cost: number } | undefined;
+  for (const id of cardIds) {
+    const card = cardById.get(id);
+    if (!card) continue;
+    const r = RARITY_ORDER[card.rarity] ?? 0;
+    if (!best || r > best.rarity || (r === best.rarity && card.cost > best.cost)) {
+      best = { id: card.id, rarity: r, cost: card.cost };
+    }
+  }
+  return best?.id;
 }

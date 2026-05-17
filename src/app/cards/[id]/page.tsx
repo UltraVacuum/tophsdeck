@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 
 import { HS_CLASSES, CLASS_COLORS } from "@/data/classes";
 import { MECHANICS } from "@/data/mechanics";
+import { CardStory } from "@/components/cards/card-story";
 import { ArrowLeft, Star, Flame, Sparkles, Swords, Shield, Heart, Zap, Palette } from "lucide-react";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
@@ -21,6 +22,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     text: card.textZh || card.text, id: card.id,
   });
 }
+
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return ALL_CARDS.filter(c => c.set === "CORE" || c.rarity === "LEGENDARY")
@@ -288,16 +291,15 @@ export default async function CardDetailPage({ params }: { params: Promise<{ id:
               )}
             </div>
 
-            {/* Flavor text */}
-            {card.flavorZh && (
-              <div className="rounded-lg border border-border/30 bg-muted/20 px-4 py-3">
-                <div className="flex items-center gap-2 mb-1.5">
-                  <Flame className="h-3.5 w-3.5 text-orange-400" />
-                  <span className="text-xs font-medium text-muted-foreground">风味文字</span>
-                </div>
-                <p className="text-sm text-muted-foreground/80 italic leading-relaxed">{card.flavorZh}</p>
-              </div>
-            )}
+            {/* Card Story Module */}
+            <CardStory
+              cardId={card.id}
+              dbfId={card.dbfId}
+              cardNameZh={card.nameZh}
+              cardName={card.name}
+              flavorZh={card.flavorZh}
+              cardClass={card.cardClass}
+            />
 
             {/* Mechanics */}
             {relatedMechanics.length > 0 && (

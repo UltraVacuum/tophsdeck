@@ -7,9 +7,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  --font-mono: var(--font-geist-mono), "Menlo", monospace;
-  --font-heading: "Noto Serif SC", "STSong", "SimSun", "Songti SC", serif;
+  --font-sans: var(--font-sans), "PingFang SC", -apple-system, BlinkMacSystemFont, "Helvetica Neue", system-ui, sans-serif;
+  --font-mono: var(--font-mono), "SF Mono", Menlo, monospace;
+  --font-heading: "Iowan Old Style", "Charter", Georgia, "Noto Serif SC", serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -49,80 +49,89 @@
 }
 
 /*
-  Hearthstone Warm Parchment Theme
-  Inspired by HS Collection Manager, Deck Builder, and Inn interiors
-  Warm parchment surfaces, amber-gold accents, ink-dark text
-  Class colors are vivid against the warm neutral canvas
+  TopHSDeck — Xiaohongshu-inspired clean theme
+  Light gray canvas, white surfaces, red accent, serif display font
 */
 :root {
-  /* Canvas — warm parchment (HS menu panel) */
-  --background: oklch(0.93 0.012 65);
-  --foreground: oklch(0.18 0.030 50);
+  /* Canvas — light gray */
+  --background: #F5F5F5;
+  --foreground: #333333;
 
-  /* Cards — slightly darker parchment for depth */
-  --card: oklch(0.96 0.008 65);
-  --card-foreground: oklch(0.18 0.030 50);
-  --popover: oklch(0.96 0.008 65);
-  --popover-foreground: oklch(0.18 0.030 50);
+  /* Cards — white surfaces */
+  --card: #FFFFFF;
+  --card-foreground: #333333;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
 
-  /* Primary — Hearthstone amber-gold (hearth fire, legendary glow) */
-  --primary: oklch(0.58 0.160 50);
-  --primary-foreground: oklch(0.96 0.010 65);
+  /* Primary — Xiaohongshu red */
+  --primary: #FF2442;
+  --primary-foreground: #FFFFFF;
 
-  /* Secondary — warm tan (leather, worn wood) */
-  --secondary: oklch(0.88 0.020 60);
-  --secondary-foreground: oklch(0.22 0.025 50);
+  /* Secondary — soft gray */
+  --secondary: #F0F0F0;
+  --secondary-foreground: #333333;
 
-  /* Muted — warm gray-brown */
-  --muted: oklch(0.85 0.015 60);
-  --muted-foreground: oklch(0.50 0.025 55);
+  /* Muted */
+  --muted: #EBEBEB;
+  --muted-foreground: #737373;
 
-  /* Accent — golden highlight */
-  --accent: oklch(0.82 0.040 55);
-  --accent-foreground: oklch(0.18 0.030 50);
+  /* Accent — soft foreground tint */
+  --accent: #F0F0F0;
+  --accent-foreground: #333333;
 
-  /* Destructive — HS red (Warlock/Hunter damage) */
-  --destructive: oklch(0.55 0.200 25);
+  /* Destructive */
+  --destructive: #FF2442;
 
-  /* Borders — warm brown lines */
-  --border: oklch(0.78 0.020 55);
-  --input: oklch(0.82 0.018 55);
+  /* Borders — very light */
+  --border: #EBEBEB;
+  --input: #EBEBEB;
 
-  /* Ring — gold focus ring */
-  --ring: oklch(0.58 0.160 50);
+  /* Ring — primary red */
+  --ring: #FF2442;
 
-  /* Charts — HS rarity colors on warm base */
-  --chart-1: oklch(0.58 0.160 50);
-  --chart-2: oklch(0.48 0.170 290);
-  --chart-3: oklch(0.50 0.140 250);
-  --chart-4: oklch(0.50 0.140 155);
-  --chart-5: oklch(0.55 0.140 340);
+  /* Charts */
+  --chart-1: #FF2442;
+  --chart-2: #9482C9;
+  --chart-3: #0070DE;
+  --chart-4: #ABD473;
+  --chart-5: #FF7D0A;
 
-  --radius: 0.375rem;
+  --radius: 0.75rem;
 
-  /* Sidebar — darker leather panel */
-  --sidebar: oklch(0.90 0.015 60);
-  --sidebar-foreground: oklch(0.18 0.030 50);
-  --sidebar-primary: oklch(0.58 0.160 50);
-  --sidebar-primary-foreground: oklch(0.96 0.010 65);
-  --sidebar-accent: oklch(0.85 0.025 55);
-  --sidebar-accent-foreground: oklch(0.22 0.025 50);
-  --sidebar-border: oklch(0.76 0.020 55);
-  --sidebar-ring: oklch(0.58 0.160 50);
+  /* Sidebar */
+  --sidebar: #F0F0F0;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #FF2442;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EBEBEB;
+  --sidebar-accent-foreground: #333333;
+  --sidebar-border: #EBEBEB;
+  --sidebar-ring: #FF2442;
 
-  /* HS Class Colors — vivid on warm base */
-  --hs-dk: oklch(0.42 0.160 250);
-  --hs-dh: oklch(0.42 0.180 310);
-  --hs-druid: oklch(0.58 0.180 55);
-  --hs-hunter: oklch(0.58 0.160 120);
-  --hs-mage: oklch(0.58 0.130 210);
-  --hs-paladin: oklch(0.60 0.150 340);
-  --hs-priest: oklch(0.82 0.020 300);
-  --hs-rogue: oklch(0.62 0.120 80);
-  --hs-shaman: oklch(0.45 0.180 250);
-  --hs-warlock: oklch(0.42 0.140 290);
-  --hs-warrior: oklch(0.52 0.130 55);
-  --hs-neutral: oklch(0.50 0.015 60);
+  /* HS Class Colors */
+  --hs-dk: #C41F7B;
+  --hs-dh: #A330C9;
+  --hs-druid: #FF7D0A;
+  --hs-hunter: #ABD473;
+  --hs-mage: #68CCEF;
+  --hs-paladin: #F58CBA;
+  --hs-priest: #AAAAAA;
+  --hs-rogue: #FFF569;
+  --hs-shaman: #0070DE;
+  --hs-warlock: #9482C9;
+  --hs-warrior: #C41E3A;
+  --hs-neutral: #999999;
+
+  /* Mana gem */
+  --mana-bg: #0066CC;
+  --mana-fg: #FFFFFF;
+
+  /* Rarity */
+  --rarity-common: #9D9D9D;
+  --rarity-rare: #0070FF;
+  --rarity-epic: #A335EE;
+  --rarity-legendary: #FF8000;
+  --rarity-free: #888888;
 }
 
 @layer base {
@@ -133,6 +142,8 @@
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 15px;
+    line-height: 1.55;
   }
   html {
     @apply font-sans;
@@ -140,9 +151,9 @@
 }
 
 /* === Animations === */
-@keyframes hearthGlow {
-  0%, 100% { opacity: 0.06; }
-  50% { opacity: 0.12; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes parchmentIn {
@@ -154,27 +165,16 @@
   from { width: 0%; }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
 @layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease both;
+  }
   .animate-parchment-in {
     animation: parchmentIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   .animate-tier-grow {
     animation: tierGrow 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
-  .animate-hearth-glow {
-    animation: hearthGlow 4s ease-in-out infinite;
-  }
-  .stagger-1 { animation-delay: 0.05s; }
-  .stagger-2 { animation-delay: 0.1s; }
-  .stagger-3 { animation-delay: 0.15s; }
-  .stagger-4 { animation-delay: 0.2s; }
-  .stagger-5 { animation-delay: 0.25s; }
-  .stagger-6 { animation-delay: 0.3s; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { Swords, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -11,8 +11,6 @@ const NAV_ITEMS = [
   { href: "/decks", label: "卡组" },
   { href: "/cards", label: "卡牌" },
   { href: "/meta", label: "环境" },
-  { href: "/synergies", label: "配合" },
-  { href: "/mechanics", label: "机制" },
   { href: "/news", label: "资讯" },
 ];
 
@@ -21,14 +19,13 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="mx-auto flex h-12 max-w-6xl items-center justify-between px-4">
-        <Link href="/" className="flex items-center gap-2">
-          <Swords className="h-4 w-4 text-primary" />
-          <span className="font-heading font-bold text-sm text-primary">TopHSDeck</span>
+    <header className="sticky top-0 z-50 bg-background/92 backdrop-blur-xl border-b border-border">
+      <div className="mx-auto flex h-12 max-w-280 items-center justify-between px-8">
+        <Link href="/" className="font-heading text-lg font-semibold tracking-tight">
+          TopHS<span className="text-primary">Deck</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-5">
+        <nav className="hidden md:flex items-center gap-7">
           {NAV_ITEMS.map((item) => {
             const isActive = item.href === "/"
               ? pathname === "/"
@@ -38,10 +35,10 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-xs font-medium transition-colors",
+                  "text-sm transition-colors pb-0.5 border-b-2",
                   isActive
-                    ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    ? "text-foreground font-semibold border-primary"
+                    : "text-muted-foreground border-transparent hover:text-foreground"
                 )}
               >
                 {item.label}
@@ -59,7 +56,7 @@ export function Header() {
       </div>
 
       {mobileOpen && (
-        <nav className="md:hidden border-t border-border/40 px-4 py-2 space-y-0.5 bg-background">
+        <nav className="md:hidden border-t border-border/40 px-8 py-2 space-y-0.5 bg-background">
           {NAV_ITEMS.map((item) => {
             const isActive = item.href === "/"
               ? pathname === "/"
