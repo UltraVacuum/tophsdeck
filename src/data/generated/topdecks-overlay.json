@@ -1,5 +1,5 @@
 {
-  "lastFetch": "2026-05-16T14:29:08.415Z",
+  "lastFetch": "2026-05-17T04:37:33.127Z",
   "source": "hearthstonetopdecks",
   "fetchSuccess": true,
   "tierListCount": 33,
@@ -52,14 +52,14 @@
         },
         {
           "dbfId": 120082,
-          "name": "Axe of Cenarius",
-          "cardId": "TIME_020t1",
+          "name": "Unknown(120082)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 120083,
-          "name": "First Portal to Argus",
-          "cardId": "TIME_020t2",
+          "name": "Unknown(120083)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -199,14 +199,14 @@
         },
         {
           "dbfId": 119919,
-          "name": "Gnomish Aura",
-          "cardId": "TIME_009t1",
+          "name": "Unknown(119919)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119920,
-          "name": "Mekkatorque's Aura",
-          "cardId": "TIME_009t2",
+          "name": "Unknown(119920)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -461,14 +461,14 @@
         },
         {
           "dbfId": 120082,
-          "name": "Axe of Cenarius",
-          "cardId": "TIME_020t1",
+          "name": "Unknown(120082)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 120083,
-          "name": "First Portal to Argus",
-          "cardId": "TIME_020t2",
+          "name": "Unknown(120083)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -709,14 +709,14 @@
         },
         {
           "dbfId": 119647,
-          "name": "High King's Hammer",
-          "cardId": "TIME_209t",
+          "name": "Unknown(119647)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119653,
-          "name": "Avatar Form",
-          "cardId": "TIME_209t2",
+          "name": "Unknown(119653)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -1102,14 +1102,14 @@
         },
         {
           "dbfId": 120082,
-          "name": "Axe of Cenarius",
-          "cardId": "TIME_020t1",
+          "name": "Unknown(120082)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 120083,
-          "name": "First Portal to Argus",
-          "cardId": "TIME_020t2",
+          "name": "Unknown(120083)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -1241,14 +1241,14 @@
         },
         {
           "dbfId": 119929,
-          "name": "The Well of Eternity",
-          "cardId": "TIME_211t1",
+          "name": "Unknown(119929)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119930,
-          "name": "Zin-Azshari",
-          "cardId": "TIME_211t2",
+          "name": "Unknown(119930)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -1495,14 +1495,14 @@
         },
         {
           "dbfId": 119705,
-          "name": "Ranger Captain Alleria",
-          "cardId": "TIME_609t1",
+          "name": "Unknown(119705)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119706,
-          "name": "Ranger Initiate Vereesa",
-          "cardId": "TIME_609t2",
+          "name": "Unknown(119706)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -1860,14 +1860,14 @@
         },
         {
           "dbfId": 120082,
-          "name": "Axe of Cenarius",
-          "cardId": "TIME_020t1",
+          "name": "Unknown(120082)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 120083,
-          "name": "First Portal to Argus",
-          "cardId": "TIME_020t2",
+          "name": "Unknown(120083)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -2951,14 +2951,14 @@
       "cards": [
         {
           "dbfId": 119705,
-          "name": "Ranger Captain Alleria",
-          "cardId": "TIME_609t1",
+          "name": "Unknown(119705)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119706,
-          "name": "Ranger Initiate Vereesa",
-          "cardId": "TIME_609t2",
+          "name": "Unknown(119706)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -3483,14 +3483,14 @@
         },
         {
           "dbfId": 119525,
-          "name": "Azure Oathstone",
-          "cardId": "TIME_852t3",
+          "name": "Unknown(119525)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119527,
-          "name": "Azure King Malygos",
-          "cardId": "TIME_852t1",
+          "name": "Unknown(119527)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -3731,56 +3731,56 @@
         },
         {
           "dbfId": 119433,
-          "name": "Tiny Rafaam",
-          "cardId": "TIME_005t1",
+          "name": "Unknown(119433)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119434,
-          "name": "Green Rafaam",
-          "cardId": "TIME_005t2",
+          "name": "Unknown(119434)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119441,
-          "name": "Explorer Rafaam",
-          "cardId": "TIME_005t3",
+          "name": "Unknown(119441)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119443,
-          "name": "Warchief Rafaam",
-          "cardId": "TIME_005t4",
+          "name": "Unknown(119443)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119444,
-          "name": "Mindflayer R'faam",
-          "cardId": "TIME_005t5",
+          "name": "Unknown(119444)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119445,
-          "name": "Calamitous Rafaam",
-          "cardId": "TIME_005t6",
+          "name": "Unknown(119445)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119446,
-          "name": "Giant Rafaam",
-          "cardId": "TIME_005t7",
+          "name": "Unknown(119446)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119447,
-          "name": "Murloc Rafaam",
-          "cardId": "TIME_005t8",
+          "name": "Unknown(119447)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 119450,
-          "name": "Archmage Rafaam",
-          "cardId": "TIME_005t9",
+          "name": "Unknown(119450)",
+          "cardId": "",
           "quantity": 1
         },
         {
@@ -4196,14 +4196,14 @@
         },
         {
           "dbfId": 120064,
-          "name": "Atiesh the Greatstaff",
-          "cardId": "TIME_890t",
+          "name": "Unknown(120064)",
+          "cardId": "",
           "quantity": 1
         },
         {
           "dbfId": 120068,
-          "name": "Karazhan the Sanctum",
-          "cardId": "TIME_890t2",
+          "name": "Unknown(120068)",
+          "cardId": "",
           "quantity": 1
         },
         {
